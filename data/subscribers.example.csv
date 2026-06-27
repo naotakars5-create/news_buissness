@@ -1,0 +1,3 @@
+line_user_id,name,stripe_customer_id,paid,active,note
+Uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx,山田太郎,cus_XXXXXXXXXXXX,true,true,サンプル行（本番では data/subscribers.csv を作成して使用）
+Uyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy,佐藤花子,cus_YYYYYYYYYYYY,false,true,未入金のサンプル（配信対象外になる）

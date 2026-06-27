@@ -1,0 +1,37 @@
+# 秘密情報
+# .env で始まるファイルはすべて除外し、テンプレートの .env.example だけ許可する
+# （.env / ".env copy" / .env.local などの取りこぼしを防ぐ）
+.env*
+!.env.example
+*.pem
+*-credentials.json
+google_service_account.json
+
+# 購読者CSV（個人情報を含むためコミットしない。GitHub Actions では Secret から復元）
+data/subscribers.csv
+
+# 生成・実行時データ（コミット不要）
+data/delivery_logs/*.json
+data/source_items/*.json
+logs/*.log
+.pytest_cache/
+
+# ※ data/drafts/*.json は「承認済み原稿を commit して GitHub Actions で配信する」ため
+#    あえて無視しない（追跡対象）。
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env.local
+
+# OS / エディタ
+.DS_Store
+.idea/
+.vscode/
+
+# .gitkeep は残す
+!data/delivery_logs/.gitkeep
+!data/source_items/.gitkeep
+!logs/.gitkeep

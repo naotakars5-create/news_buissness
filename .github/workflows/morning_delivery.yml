@@ -1,0 +1,105 @@
+name: ちば営業朝刊 自動配信
+
+# 毎朝 7:30 JST に「承認済み(approved)」の原稿だけを配信する。
+# GitHub Actions の cron は UTC のため、07:30 JST = 前日 22:30 UTC。
+# JST 平日(月〜金)の朝 = UTC 日〜木(0-4) の 22:30 に相当する。
+on:
+  schedule:
+    - cron: "30 22 * * 0-4"   # 07:30 JST(月〜金)
+  workflow_dispatch:           # 手動実行も可能
+    inputs:
+      date:
+        description: "配信日 YYYY-MM-DD（空なら今日）"
+        required: false
+        default: ""
+      dry_run:
+        description: "ドライラン（送信しない）"
+        type: boolean
+        required: false
+        default: false
+      to_test_user:
+        description: "自分(LINE_TEST_USER_ID)だけに配信（テスト）"
+        type: boolean
+        required: false
+        default: false
+
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: チェックアウト
+        uses: actions/checkout@v4
+
+      - name: Python セットアップ
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 依存インストール
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: 配信実行
+        env:
+          # --- Secrets（Settings > Secrets and variables > Actions > Secrets）---
+          LINE_CHANNEL_ACCESS_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
+          LINE_TEST_USER_ID: ${{ secrets.LINE_TEST_USER_ID }}
+          STRIPE_API_KEY: ${{ secrets.STRIPE_API_KEY }}
+          # 購読者CSVの「中身」を Secret に入れておくと、ここで復元して全員配信できる
+          SUBSCRIBERS_CSV: ${{ secrets.SUBSCRIBERS_CSV }}
+          GOOGLE_SERVICE_ACCOUNT_JSON_CONTENT: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          # --- Variables（Settings > Secrets and variables > Actions > Variables）---
+          REQUIRE_STRIPE_PAID: ${{ vars.REQUIRE_STRIPE_PAID }}
+          SUBSCRIBER_SOURCE: ${{ vars.SUBSCRIBER_SOURCE }}
+          GOOGLE_SHEETS_ID: ${{ vars.GOOGLE_SHEETS_ID }}
+          GOOGLE_SHEETS_WORKSHEET: ${{ vars.GOOGLE_SHEETS_WORKSHEET }}
+          TIMEZONE: "Asia/Tokyo"
+        run: |
+          set -e
+          # Google Sheets 利用時はサービスアカウントJSONを復元
+          if [ -n "$GOOGLE_SERVICE_ACCOUNT_JSON_CONTENT" ]; then
+            echo "$GOOGLE_SERVICE_ACCOUNT_JSON_CONTENT" > google_service_account.json
+          fi
+
+          ARGS=""
+          [ -n "${{ github.event.inputs.date }}" ] && ARGS="$ARGS --date ${{ github.event.inputs.date }}"
+          [ "${{ github.event.inputs.dry_run }}" = "true" ] && ARGS="$ARGS --dry-run"
+
+          if [ "${{ github.event.inputs.to_test_user }}" = "true" ]; then
+            echo "[mode] 手動指定: 自分宛て(LINE_TEST_USER_ID)に配信"
+            python -m scripts.send_morning $ARGS --to-test-user
+          elif [ -n "$SUBSCRIBERS_CSV" ]; then
+            echo "[mode] 購読者CSV(Secret)から全購読者へ配信"
+            mkdir -p data
+            printf '%s' "$SUBSCRIBERS_CSV" > data/subscribers.csv
+            python -m scripts.send_morning $ARGS
+          elif [ "$SUBSCRIBER_SOURCE" = "google_sheets" ] && [ -n "$GOOGLE_SHEETS_ID" ]; then
+            echo "[mode] Google Sheetsの購読者へ配信"
+            python -m scripts.send_morning $ARGS
+          else
+            echo "[mode] 購読者ソース未設定 → 自分宛て(LINE_TEST_USER_ID)に配信"
+            python -m scripts.send_morning $ARGS --to-test-user
+          fi
+
+      - name: 配信ログを成果物として保存
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: delivery-logs
+          path: |
+            logs/
+            data/delivery_logs/
+          retention-days: 30
+          if-no-files-found: ignore
+
+# 運用メモ:
+#  - 配信される原稿は data/drafts/<日付>.json のうち status=approved のものだけ。
+#    Streamlit で承認した原稿を commit & push しておくこと
+#    （例: git add -f data/drafts/2026-06-27.json && git commit -m "approve" && git push）。
+#  - 承認済み原稿が無い日は「承認済み原稿なし」とログに残して正常終了（配信しない）。
+#  - まず自分宛てで試すなら、Secrets に LINE_CHANNEL_ACCESS_TOKEN と LINE_TEST_USER_ID を
+#    登録し、SUBSCRIBERS_CSV は未設定にしておく（自動で --to-test-user になる）。
+#  - 全購読者へ配信する段階で、購読者CSVの中身を Secret `SUBSCRIBERS_CSV` に登録する
+#    （個人情報をリポジトリに置かずに済む）。

@@ -1,0 +1,99 @@
+name: ちば営業朝刊 朝の前処理（収集・下書き）
+
+# 配信(7:30)は morning_delivery.yml が担当。こちらは前段の2ステップ。
+#   6:30 JST 収集   = 21:30 UTC（前日）= "30 21 * * 0-4"
+#   6:45 JST 下書き = 21:45 UTC（前日）= "45 21 * * 0-4"
+# どのスケジュールで起動したかで実行ステージを切り替える。
+on:
+  schedule:
+    - cron: "30 21 * * 0-4"   # 6:30 JST 収集
+    - cron: "45 21 * * 0-4"   # 6:45 JST 下書き
+  workflow_dispatch:
+    inputs:
+      stage:
+        description: "実行ステージ"
+        type: choice
+        options: [both, collect, draft]
+        default: both
+      date:
+        description: "対象日 YYYY-MM-DD（空なら今日）"
+        required: false
+        default: ""
+
+permissions:
+  contents: write   # 生成したネタ・下書きをリポジトリへコミットするため
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 依存インストール
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: ステージ判定
+        id: stage
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            if [ "${{ github.event.schedule }}" = "30 21 * * 0-4" ]; then echo "stage=collect" >> "$GITHUB_OUTPUT";
+            else echo "stage=draft" >> "$GITHUB_OUTPUT"; fi
+          else
+            echo "stage=${{ github.event.inputs.stage }}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: 収集（6:30）
+        if: steps.stage.outputs.stage == 'collect' || steps.stage.outputs.stage == 'both'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          AI_MODEL: ${{ vars.AI_MODEL }}
+          SCORING_MODE: ${{ vars.SCORING_MODE }}
+          SCORE_THRESHOLD: ${{ vars.SCORE_THRESHOLD }}
+          ENABLED_SOURCES: ${{ vars.ENABLED_SOURCES }}
+          SOURCE_FEED_OVERRIDES: ${{ vars.SOURCE_FEED_OVERRIDES }}
+          EXCLUDE_KEYWORDS_EXTRA: ${{ vars.EXCLUDE_KEYWORDS_EXTRA }}
+          TIMEZONE: "Asia/Tokyo"
+        run: |
+          ARGS=""
+          [ -n "${{ github.event.inputs.date }}" ] && ARGS="--date ${{ github.event.inputs.date }}"
+          python -m scripts.collect_news $ARGS
+
+      - name: 下書き生成（6:45 / 承認はしない）
+        if: steps.stage.outputs.stage == 'draft' || steps.stage.outputs.stage == 'both'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          AI_MODEL: ${{ vars.AI_MODEL }}
+          SCORE_THRESHOLD: ${{ vars.SCORE_THRESHOLD }}
+          DRAFT_LENGTH_DEFAULT: ${{ vars.DRAFT_LENGTH_DEFAULT }}
+          TIMEZONE: "Asia/Tokyo"
+        run: |
+          ARGS=""
+          [ -n "${{ github.event.inputs.date }}" ] && ARGS="--date ${{ github.event.inputs.date }}"
+          python -m scripts.generate_draft $ARGS
+
+      - name: 生成物をコミット（ネタ・下書き・ログ）
+        run: |
+          git config user.name "chiba-asakan-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add -f data/source_items data/drafts logs || true
+          if git diff --cached --quiet; then
+            echo "変更なし。コミットしません。"
+          else
+            git commit -m "auto: 朝の収集・下書き ($(date -u +%Y-%m-%dT%H:%MZ))"
+            git push
+          fi
+
+# 運用メモ:
+#  - 6:45 で status=draft の下書きが作られ、コミットされる。
+#  - 人は GitHub 上の差分か、ローカルで pull して管理画面で内容を確認し、
+#    承認(status=approved)した原稿をコミット&プッシュする。
+#  - 7:30 の morning_delivery.yml は approved の原稿だけを配信する。
+#  - 6:45→7:30 の間に人の承認が必要。承認の時間が取りづらい場合は、
+#    前日夜に翌日ぶんを生成・承認しておく運用や、Cloud Run + 永続ストレージを推奨。

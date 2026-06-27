@@ -1,0 +1,24 @@
+# ちば営業朝刊 MVP 依存パッケージ
+# Python 3.10+ を想定
+
+# 管理画面
+streamlit>=1.36
+
+# AI 原稿生成（Claude / Anthropic 公式 SDK）
+anthropic>=0.49
+
+# 決済（支払い済みユーザーの判定）
+stripe>=9.0
+
+# LINE Messaging API 呼び出し（公式 SDK は使わず requests で直接叩く）
+requests>=2.31
+
+# .env 読み込み
+python-dotenv>=1.0
+
+# Google Sheets で購読者を管理する場合のみ必要（CSV 運用なら不要）
+gspread>=6.0
+google-auth>=2.30
+
+# テスト（開発時のみ）
+pytest>=8.0
