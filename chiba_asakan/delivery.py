@@ -13,6 +13,7 @@ from pathlib import Path
 
 from .config import Config
 from .line_client import LineApiError, LineClient
+from .line_flex import build_carousel, flex_alt_text
 from .logging_config import get_logger
 from .models import Manuscript, STATUS_APPROVED, STATUS_SENT
 from .stripe_filter import PaidResolution, resolve_paid_subscribers
@@ -28,6 +29,7 @@ class RecipientResult:
     status: str            # "sent" | "failed"
     error: str = ""
     http_status: int | None = None
+    mode: str = ""         # "flex" | "text" | "flex→text"（フォールバック）
 
 
 @dataclass
@@ -72,6 +74,26 @@ def _write_delivery_log(cfg: Config, result: DeliveryResult) -> Path:
     return path
 
 
+def _send_to(
+    client: LineClient, user_id: str, alt: str, flex_contents: dict, text: str, use_flex: bool
+) -> str:
+    """1 ユーザーに送信し、使った送信方式（mode）を返す。
+
+    use_flex=True なら Flex を試し、失敗したらテキストにフォールバックする。
+    テキストでも失敗したら例外を伝播する。
+    """
+    if not use_flex:
+        client.push_text(user_id, text)
+        return "text"
+    try:
+        client.push_flex(user_id, alt, flex_contents)
+        return "flex"
+    except LineApiError as exc:
+        logger.warning("Flex送信に失敗、テキストにフォールバック: user=%s err=%s", user_id, exc)
+        client.push_text(user_id, text)
+        return "flex→text"
+
+
 def deliver(
     cfg: Config,
     manuscript: Manuscript,
@@ -80,6 +102,8 @@ def deliver(
     subscribers: list[Subscriber] | None = None,
     rate_limit_sleep: float = 0.0,
     skip_payment_check: bool = False,
+    use_flex: bool = True,
+    flex_style: dict | None = None,
 ) -> DeliveryResult:
     """原稿を支払い済み購読者へ配信する。
 
@@ -113,8 +137,10 @@ def deliver(
     )
 
     text = manuscript.to_line_text()
+    flex_contents = build_carousel(manuscript, flex_style)
+    alt = flex_alt_text(manuscript)
 
-    # 3) 実配信
+    # 3) 実配信（Flex標準・失敗時はテキストにフォールバック）
     line_client: LineClient | None = None
     if not dry_run:
         line_client = LineClient(cfg.line_channel_access_token)
@@ -122,16 +148,18 @@ def deliver(
     for sub in resolution.paid:
         if dry_run:
             result.results.append(
-                RecipientResult(line_user_id=sub.line_user_id, name=sub.name, status="sent")
+                RecipientResult(line_user_id=sub.line_user_id, name=sub.name,
+                                status="sent", mode=("flex" if use_flex else "text"))
             )
             result.sent_count += 1
             continue
 
         try:
             assert line_client is not None
-            line_client.push_text(sub.line_user_id, text)
+            mode = _send_to(line_client, sub.line_user_id, alt, flex_contents, text, use_flex)
             result.results.append(
-                RecipientResult(line_user_id=sub.line_user_id, name=sub.name, status="sent")
+                RecipientResult(line_user_id=sub.line_user_id, name=sub.name,
+                                status="sent", mode=mode)
             )
             result.sent_count += 1
         except LineApiError as exc:
@@ -283,9 +311,47 @@ def send_line_test(
         return False, str(exc)
 
 
-def send_single_test(cfg: Config, manuscript: Manuscript, user_id: str) -> tuple[bool, str]:
+def send_manuscript_test(
+    cfg: Config,
+    manuscript: Manuscript,
+    user_id: str | None = None,
+    use_flex: bool = True,
+    flex_style: dict | None = None,
+) -> tuple[bool, str, str]:
     """原稿1本を指定ユーザー（自分など）にだけ送る『テスト配信』。
 
-    内部は send_line_test に委譲（失敗は logs/line_test.log にも記録される）。
+    use_flex=True は Flex（失敗時テキストにフォールバック）、False はテキスト。
+    返り値: (成功, エラー文, 送信方式)。失敗は logs/line_test.log に記録。
     """
-    return send_line_test(cfg, text=manuscript.to_line_text(), user_id=user_id)
+    target = (user_id or cfg.line_test_user_id or "").strip()
+    if not cfg.has_line():
+        err = "LINE_CHANNEL_ACCESS_TOKEN が未設定です"
+        _log_test_failure(cfg, err)
+        return False, err, ""
+    if not target:
+        err = "LINE_TEST_USER_ID が未設定です"
+        _log_test_failure(cfg, err)
+        return False, err, ""
+    try:
+        client = LineClient(cfg.line_channel_access_token)
+        text = manuscript.to_line_text()
+        contents = build_carousel(manuscript, flex_style)
+        alt = flex_alt_text(manuscript)
+        mode = _send_to(client, target, alt, contents, text, use_flex)
+        logger.info("原稿テスト配信 成功(%s): 宛先=%s", mode, _mask_uid(target))
+        return True, "", mode
+    except LineApiError as exc:
+        err = f"LINE APIエラー (status={exc.status_code})"
+        _log_test_failure(cfg, f"{err} 宛先={_mask_uid(target)} detail={exc}", exc.body)
+        logger.error("原稿テスト配信 失敗: %s 宛先=%s", err, _mask_uid(target))
+        return False, f"{err}: {exc}", ""
+    except Exception as exc:  # noqa: BLE001
+        _log_test_failure(cfg, f"想定外エラー 宛先={_mask_uid(target)}: {exc}")
+        logger.exception("原稿テスト配信 想定外エラー")
+        return False, str(exc), ""
+
+
+def send_single_test(cfg: Config, manuscript: Manuscript, user_id: str) -> tuple[bool, str]:
+    """後方互換: テキストで原稿を1ユーザーに送る（2要素タプルを返す）。"""
+    ok, err, _ = send_manuscript_test(cfg, manuscript, user_id=user_id, use_flex=False)
+    return ok, err

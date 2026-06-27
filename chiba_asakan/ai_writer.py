@@ -1,12 +1,13 @@
 """AI（Claude / Anthropic）による原稿生成。
 
-収集したネタ（SourceRecord）から、千葉の営業マン向けの濃い原稿（5セクション）を
-生成する。生成物は「たたき台」。管理画面で人が確認・編集・承認してから配信する。
+収集したネタ（SourceRecord）から、千葉の営業マン向けの「営業で使える朝のインサイト」を
+生成する。単なるニュース要約ではなく、営業への変換（誰に刺さるか・商談での使い方・
+トーク・切り返し）まで具体的に書く。生成物は「たたき台」で、管理画面で人が確認・承認する。
 
 著作権配慮:
   - 渡すのは title / summary / url / area / category のみ（本文転載はしない）。
-  - 出典URLは AI の出力からではなく、選んだネタのURLをそのまま付与する（正確性担保）。
-  - 補助金・公募・入札系は扱わないよう明示する（収集側でも除外済み）。
+  - 出典URLは AI 出力ではなく、選んだネタのURLをそのまま付与する（正確性担保）。
+  - 補助金・公募・入札系は扱わない（収集側でも除外済み）。
 """
 from __future__ import annotations
 
@@ -24,24 +25,30 @@ from .models import (
 
 logger = get_logger("ai_writer")
 
-# 生成テキストのスキーマ（出典は別途プログラムで付与）
+# 生成する本文フィールド（出典は別途プログラムで付与）
+_TEXT_FIELDS = [
+    "theme", "chiba_topic", "why_sales", "target_audience", "deal_usage",
+    "sales_talk", "rebuttal", "psychology_theme", "psychology", "action",
+]
+
 _SCHEMA = {
     "type": "object",
     "properties": {
-        "theme": {"type": "string", "description": "今日のテーマ（短いキャッチ）"},
-        "chiba_topic": {"type": "string", "description": "今日の千葉ネタ（独自の言葉で要約・解説）"},
-        "sales_point": {"type": "string", "description": "営業マンが見るべきポイント"},
+        "theme": {"type": "string", "description": "今日のテーマ（今日の千葉トピックを一言で）"},
+        "chiba_topic": {"type": "string", "description": "今日の千葉トピック（独自の言葉で要約・解説）"},
+        "why_sales": {"type": "string", "description": "営業マンが見るべき理由（このネタが商談でなぜ効くか）"},
+        "target_audience": {"type": "string", "description": "刺さりやすい営業・業界（誰に刺さるかを具体的に）"},
+        "deal_usage": {"type": "string", "description": "商談での使い方（いつ・どう切り出すか）"},
+        "sales_talk": {"type": "string", "description": "そのまま使える営業トーク（自然な一言・セリフ）"},
+        "rebuttal": {"type": "string", "description": "切り返し例（よくある断り文句への返し方を1つ）"},
         "psychology_theme": {
-            "type": "string",
-            "enum": PSYCHOLOGY_THEMES,
+            "type": "string", "enum": PSYCHOLOGY_THEMES,
             "description": "営業心理・行動経済学のテーマ",
         },
         "psychology": {"type": "string", "description": "上のテーマの分かりやすい説明と営業での使い方"},
-        "sales_talk": {"type": "string", "description": "そのまま使える営業トーク（一言・セリフ）"},
         "action": {"type": "string", "description": "今日のアクション（今日すぐやれる具体行動）"},
     },
-    "required": ["theme", "chiba_topic", "sales_point", "psychology_theme",
-                 "psychology", "sales_talk", "action"],
+    "required": _TEXT_FIELDS,
     "additionalProperties": False,
 }
 
@@ -51,27 +58,24 @@ _SYSTEM = (
     "広告営業など特定業種に偏らないでください。\n"
     "コンセプト: 『毎朝3分、今日の商談で使える地元ネタ・営業心理・トーク例が届く』。\n"
     "方針:\n"
-    "- 単なるニュース要約ではなく、千葉の情報を“営業で使える形”に変換する。\n"
+    "- 単なるニュース要約にせず、千葉の情報を“営業で使えるインサイト”に変換する。浅い要約は禁止。\n"
+    "- 毎回『誰に刺さるか（業種・立場）』を具体的に書く。\n"
+    "- 毎回『そのまま声に出せる営業トーク』を入れる。\n"
+    "- 毎回『よくある断り文句への切り返し例』を1つ入れる。\n"
     "- 文体は20〜30代が読みやすく、固すぎず、でもビジネスで使える信頼感がある。\n"
     "- 難しい理論はかみ砕く。『明日使える』ではなく『今日使える』実用感を重視。\n"
     "- 記事本文を転載しない。固有名詞や数字は与えられた範囲で、断定しすぎない。\n"
-    "- 補助金・助成金・公募・入札・調達・委託・プロポーザル等の行政調達ネタは扱わない。\n"
-    "- 営業トークは、そのまま声に出せる自然な一言にする。"
+    "- 補助金・助成金・公募・入札・調達・委託・プロポーザル等の行政調達ネタは扱わない。"
 )
 
 
 def _format_items(items: list) -> str:
-    """SourceRecord（または dict）一覧をプロンプト用テキストに整形。"""
     lines: list[str] = []
     for i, it in enumerate(items, start=1):
-        title = getattr(it, "title", None) or it.get("title", "")
-        summary = getattr(it, "summary", None) or it.get("summary", "")
-        area = getattr(it, "area", None) or it.get("area", "")
-        category = getattr(it, "category", None) or it.get("category", "")
-        url = getattr(it, "url", None) or it.get("url", "")
+        g = (lambda k: getattr(it, k, None) if not isinstance(it, dict) else it.get(k, ""))
         lines.append(
-            f"[{i}] タイトル: {title}\n    概要: {summary}\n"
-            f"    エリア: {area} / カテゴリ: {category}\n    URL: {url}"
+            f"[{i}] タイトル: {g('title')}\n    概要: {g('summary')}\n"
+            f"    エリア: {g('area')} / カテゴリ: {g('category')}\n    URL: {g('url')}"
         )
     return "\n".join(lines) if lines else "（ネタなし。千葉の一般的な季節・地域の話題で構成してください）"
 
@@ -80,33 +84,31 @@ def _sources_from_items(items: list) -> list[dict]:
     sources: list[dict] = []
     seen: set[str] = set()
     for it in items:
-        name = getattr(it, "source_name", None) or (it.get("source_name") if isinstance(it, dict) else "") or "出典"
-        url = getattr(it, "url", None) or (it.get("url") if isinstance(it, dict) else "")
+        name = (getattr(it, "source_name", None) if not isinstance(it, dict) else it.get("source_name")) or "出典"
+        url = (getattr(it, "url", None) if not isinstance(it, dict) else it.get("url")) or ""
         if url and url not in seen:
             seen.add(url)
             sources.append({"name": name, "url": url})
     return sources
 
 
-def _build_prompt(
-    target_date: date,
-    items: list,
-    psychology_theme: str | None,
-    target_length: int,
-) -> str:
+def _build_prompt(target_date: date, items: list, psychology_theme: str | None, target_length: int) -> str:
     lines = [
         f"配信日: {format_date_slash(target_date)}",
-        f"目標文字数: 本文合計で約{target_length}字（短すぎず、有料LINEとして満足感のある濃さ）。",
+        f"目標文字数: テキスト全体で約{target_length}字（短すぎず、有料LINEとして満足感のある濃さ）。",
         "",
         "今日のネタ候補:",
         _format_items(items),
         "",
-        "上記をもとに、次のセクションを作ってください。",
-        "- theme: 今日のテーマ（今日の千葉ネタを一言で）",
-        "- chiba_topic: 今日の千葉ネタ（独自の言葉で要約・解説。本文転載しない）",
-        "- sales_point: 営業マンが見るべきポイント（このネタが商談でどう効くか）",
-        "- psychology_theme / psychology: 今日の営業心理（理論名＋かみ砕いた説明＋営業での使い方）",
+        "上記をもとに、次の各セクションを作ってください（営業への変換を具体的に）。",
+        "- theme: 今日のテーマ",
+        "- chiba_topic: 今日の千葉トピック（独自の言葉で。本文転載しない）",
+        "- why_sales: 営業マンが見るべき理由",
+        "- target_audience: 刺さりやすい営業・業界（誰に刺さるか）",
+        "- deal_usage: 商談での使い方（いつ・どう切り出すか）",
         "- sales_talk: そのまま使える営業トーク（自然な一言）",
+        "- rebuttal: 切り返し例（よくある断り文句への返し1つ）",
+        "- psychology_theme / psychology: 今日の営業心理（理論＋かみ砕いた説明＋営業での使い方）",
         "- action: 今日のアクション（今日すぐやれる具体行動）",
     ]
     if psychology_theme:
@@ -144,7 +146,7 @@ def generate_manuscript_dict(
     try:
         resp = client.messages.create(
             model=cfg.ai_model,
-            max_tokens=4000,
+            max_tokens=6000,
             system=_SYSTEM,
             output_config={"format": {"type": "json_schema", "schema": _SCHEMA}},
             messages=[{"role": "user", "content": prompt}],
@@ -155,9 +157,7 @@ def generate_manuscript_dict(
         logger.warning("構造化出力に失敗。フォールバックで再生成します: %s", exc)
         data = _generate_fallback(client, cfg, prompt)
 
-    keys = ["theme", "chiba_topic", "sales_point", "psychology_theme",
-            "psychology", "sales_talk", "action"]
-    result = {k: str(data.get(k, "")).strip() for k in keys}
+    result = {k: str(data.get(k, "")).strip() for k in _TEXT_FIELDS}
     if psychology_theme:
         result["psychology_theme"] = psychology_theme
     result["sources"] = _sources_from_items(items)
@@ -175,13 +175,8 @@ def generate_manuscript(
     """Manuscript オブジェクトを生成して返す。"""
     data = generate_manuscript_dict(cfg, target_date, items, psychology_theme, target_length)
     m = Manuscript(date=target_date.isoformat())
-    m.theme = data["theme"]
-    m.chiba_topic = data["chiba_topic"]
-    m.sales_point = data["sales_point"]
-    m.psychology_theme = data["psychology_theme"]
-    m.psychology = data["psychology"]
-    m.sales_talk = data["sales_talk"]
-    m.action = data["action"]
+    for k in _TEXT_FIELDS:
+        setattr(m, k, data[k])
     m.sources = data["sources"]
     m.status = status
     return m
@@ -189,16 +184,14 @@ def generate_manuscript(
 
 def _generate_fallback(client, cfg: Config, prompt: str) -> dict:
     """構造化出力が使えない場合に、JSONで返すよう指示して手動パースする。"""
-    keys = ["theme", "chiba_topic", "sales_point", "psychology_theme",
-            "psychology", "sales_talk", "action"]
     instruction = (
         prompt
         + "\n\n営業心理テーマは次から選ぶこと: " + ", ".join(PSYCHOLOGY_THEMES)
-        + "\n必ず次のキーだけを持つJSONのみを返す（前後の説明なし）: " + json.dumps(keys, ensure_ascii=False)
+        + "\n必ず次のキーだけを持つJSONのみを返す（前後の説明なし）: " + json.dumps(_TEXT_FIELDS, ensure_ascii=False)
     )
     resp = client.messages.create(
         model=cfg.ai_model,
-        max_tokens=4000,
+        max_tokens=6000,
         system=_SYSTEM,
         messages=[{"role": "user", "content": instruction}],
     )

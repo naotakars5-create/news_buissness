@@ -62,30 +62,32 @@ class LineClient:
             chunks.append(current)
         return chunks
 
-    def push_text(self, user_id: str, text: str) -> None:
-        """1 ユーザーにテキストを送信する。失敗時は LineApiError を投げる。
-
-        1 リクエストにつき最大 5 メッセージまで送れるため、分割しても
-        5 件以内に収まるよう前提を置く。
-        """
-        messages = [{"type": "text", "text": chunk} for chunk in self.split_text(text)]
+    def push_messages(self, user_id: str, messages: list[dict]) -> None:
+        """messages 配列（最大5件）をそのまま push する。失敗時は LineApiError。"""
         if len(messages) > 5:
-            # 念のため：5件を超える場合は先頭5件のみ（実運用ではまず起きない）
-            logger.warning("メッセージが分割で5件を超えたため切り詰めます: user=%s", user_id)
+            logger.warning("メッセージが5件を超えたため先頭5件に切り詰めます: user=%s", user_id)
             messages = messages[:5]
-
         payload = {"to": user_id, "messages": messages}
         try:
             resp = self._session.post(PUSH_URL, json=payload, timeout=self._timeout)
         except requests.RequestException as exc:
             raise LineApiError(f"ネットワークエラー: {exc}") from exc
-
         if resp.status_code != 200:
             raise LineApiError(
                 f"LINE push 失敗 (status={resp.status_code})",
                 status_code=resp.status_code,
                 body=resp.text,
             )
+
+    def push_text(self, user_id: str, text: str) -> None:
+        """1 ユーザーにテキストを送信する（5000字超は分割）。失敗時は LineApiError。"""
+        messages = [{"type": "text", "text": chunk} for chunk in self.split_text(text)]
+        self.push_messages(user_id, messages)
+
+    def push_flex(self, user_id: str, alt_text: str, contents: dict) -> None:
+        """Flex Message を1件送信する。失敗時は LineApiError。"""
+        message = {"type": "flex", "altText": (alt_text or "ちば営業朝刊")[:400], "contents": contents}
+        self.push_messages(user_id, [message])
 
     def verify_token(self) -> bool:
         """トークンが有効かどうかをかんたんに確認する（bot 情報の取得）。"""

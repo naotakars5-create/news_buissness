@@ -1,25 +1,31 @@
 """配信原稿（Manuscript）のデータモデル。
 
-原稿は 1 日 1 本。以下の 5 セクション + テーマ + 出典で構成される。
+原稿は 1 日 1 本。「営業で使える朝のインサイト」として以下の構成で作る。
   今日のテーマ
-  1. 今日の千葉ネタ
-  2. 営業マンが見るべきポイント
-  3. 今日の営業心理・行動経済学（テーマ付き）
-  4. そのまま使える営業トーク
-  5. 今日のアクション
-  出典（ソース名: URL）
+  1. 今日の千葉トピック
+  2. 営業マンが見るべき理由
+  3. 刺さりやすい営業・業界
+  4. 商談での使い方
+  5. そのまま使える営業トーク
+  6. 切り返し例
+  7. 今日の営業心理・行動経済学（テーマ付き）
+  8. 今日のアクション
+  9. 出典（ソース名: URL）
 """
 from __future__ import annotations
 
 from dataclasses import dataclass, field
 from datetime import date, datetime, timezone
 
-# (フィールド名, 見出し) の並び。本文 5 セクション。
+# (フィールド名, 見出し) の並び。本文セクション（出典・テーマは別扱い）。
 SECTIONS: list[tuple[str, str]] = [
-    ("chiba_topic", "今日の千葉ネタ"),
-    ("sales_point", "営業マンが見るべきポイント"),
-    ("psychology", "今日の営業心理"),
+    ("chiba_topic", "今日の千葉トピック"),
+    ("why_sales", "営業マンが見るべき理由"),
+    ("target_audience", "刺さりやすい営業・業界"),
+    ("deal_usage", "商談での使い方"),
     ("sales_talk", "そのまま使える営業トーク"),
+    ("rebuttal", "切り返し例"),
+    ("psychology", "今日の営業心理・行動経済学"),
     ("action", "今日のアクション"),
 ]
 SECTION_KEYS = [key for key, _ in SECTIONS]
@@ -31,8 +37,8 @@ PSYCHOLOGY_THEMES = [
     "ピークエンドの法則", "現状維持バイアス", "選択肢過多", "初頭効果", "親近効果",
 ]
 
-# 文字量プリセット
-LENGTH_PRESETS = [800, 1000, 1200]
+# 文字量プリセット（テキスト全体で 900〜1400 字）
+LENGTH_PRESETS = [900, 1100, 1400]
 
 _WEEKDAYS_JA = ["月", "火", "水", "木", "金", "土", "日"]
 
@@ -47,13 +53,19 @@ def _now_iso() -> str:
 
 
 def format_date_slash(d: date) -> str:
-    """2026/06/25 形式。"""
     return f"{d.year}/{d.month:02d}/{d.day:02d}"
 
 
 def format_date_ja(d: date) -> str:
-    """2026/06/25(木) 形式。"""
     return f"{format_date_slash(d)}({_WEEKDAYS_JA[d.weekday()]})"
+
+
+def quote_talk(talk: str) -> str:
+    """営業トークを「」で囲む（既に囲ってあればそのまま）。"""
+    t = (talk or "").strip()
+    if t and not t.startswith("「"):
+        t = f"「{t}」"
+    return t
 
 
 @dataclass
@@ -62,11 +74,14 @@ class Manuscript:
 
     date: str  # YYYY-MM-DD
     theme: str = ""                 # 今日のテーマ
-    chiba_topic: str = ""           # 今日の千葉ネタ
-    sales_point: str = ""           # 営業マンが見るべきポイント
+    chiba_topic: str = ""           # 今日の千葉トピック
+    why_sales: str = ""             # 営業マンが見るべき理由
+    target_audience: str = ""       # 刺さりやすい営業・業界（誰に刺さるか）
+    deal_usage: str = ""            # 商談での使い方
+    sales_talk: str = ""            # そのまま使える営業トーク
+    rebuttal: str = ""              # 切り返し例
     psychology_theme: str = ""      # 心理テーマ（PSYCHOLOGY_THEMES から）
     psychology: str = ""            # 今日の営業心理 本文
-    sales_talk: str = ""            # そのまま使える営業トーク
     action: str = ""                # 今日のアクション
     sources: list[dict] = field(default_factory=list)  # [{"name":.., "url":..}]
     status: str = STATUS_DRAFT
@@ -76,8 +91,8 @@ class Manuscript:
 
     # ---- バリデーション ----------------------------------------------
     def is_complete(self) -> bool:
-        """テーマ + 5 セクションすべてに本文があるか。"""
-        if not self.theme.strip():
+        """テーマ + 心理テーマ + 各セクションに本文があるか。"""
+        if not self.theme.strip() or not self.psychology_theme.strip():
             return False
         return all(getattr(self, key).strip() for key in SECTION_KEYS)
 
@@ -88,14 +103,21 @@ class Manuscript:
         for key, heading in SECTIONS:
             if not getattr(self, key).strip():
                 missing.append(heading)
+        if not self.psychology_theme.strip():
+            missing.append("営業心理テーマ")
         return missing
 
     def char_count(self) -> int:
-        """本文の合計文字数（出典・見出しを除く目安）。"""
         return sum(len(getattr(self, key)) for key in SECTION_KEYS) + len(self.theme)
 
     def has_sources(self) -> bool:
         return any(s.get("url") for s in self.sources)
+
+    def first_source_url(self) -> str:
+        for s in self.sources:
+            if s.get("url"):
+                return s["url"]
+        return ""
 
     @property
     def date_obj(self) -> date:
@@ -103,37 +125,24 @@ class Manuscript:
 
     @property
     def approved(self) -> bool:
-        """承認済みかどうか（status == approved）。"""
         return self.status == STATUS_APPROVED
 
-    # ---- LINE メッセージ生成 ------------------------------------------
+    # ---- LINE プレーンテキスト生成 ------------------------------------
     def to_line_text(self) -> str:
-        """LINE で配信するテキスト本文を組み立てる（指定フォーマット）。"""
-        talk = self.sales_talk.strip()
-        if talk and not talk.startswith("「"):
-            talk = f"「{talk}」"
-
+        """LINE で配信するテキスト本文（Flex非対応時のフォールバックにも使う）。"""
         parts: list[str] = [
             f"【ちば営業朝刊｜{format_date_slash(self.date_obj)}】",
             "",
             f"今日のテーマ：{self.theme.strip() or '（未設定）'}",
-            "",
-            "■ 今日の千葉ネタ",
-            self.chiba_topic.strip() or "（未入力）",
-            "",
-            "■ 営業マンが見るべきポイント",
-            self.sales_point.strip() or "（未入力）",
-            "",
-            "■ 今日の営業心理",
-            f"テーマ：{self.psychology_theme.strip() or '（未設定）'}",
-            self.psychology.strip() or "（未入力）",
-            "",
-            "■ そのまま使える営業トーク",
-            talk or "（未入力）",
-            "",
-            "■ 今日のアクション",
-            self.action.strip() or "（未入力）",
         ]
+        for key, heading in SECTIONS:
+            body = getattr(self, key).strip() or "（未入力）"
+            if key == "sales_talk":
+                body = quote_talk(body)
+            parts += ["", f"■ {heading}"]
+            if key == "psychology":
+                parts.append(f"テーマ：{self.psychology_theme.strip() or '（未設定）'}")
+            parts.append(body)
         if self.has_sources():
             parts += ["", "■ 出典"]
             for s in self.sources:
@@ -150,14 +159,16 @@ class Manuscript:
             "date": self.date,
             "theme": self.theme,
             "chiba_topic": self.chiba_topic,
-            "sales_point": self.sales_point,
+            "why_sales": self.why_sales,
+            "target_audience": self.target_audience,
+            "deal_usage": self.deal_usage,
+            "sales_talk": self.sales_talk,
+            "rebuttal": self.rebuttal,
             "psychology_theme": self.psychology_theme,
             "psychology": self.psychology,
-            "sales_talk": self.sales_talk,
             "action": self.action,
             "sources": self.sources,
             "status": self.status,
-            # 承認済みフラグ（status から導出。配信側は status を正とする）
             "approved": self.approved,
             "created_at": self.created_at,
             "updated_at": self.updated_at,
@@ -170,11 +181,14 @@ class Manuscript:
             date=data["date"],
             theme=data.get("theme", ""),
             chiba_topic=data.get("chiba_topic", ""),
-            # 旧モデル(sales_usage)からの後方互換
-            sales_point=data.get("sales_point", data.get("sales_usage", "")),
+            why_sales=data.get("why_sales", ""),
+            target_audience=data.get("target_audience", ""),
+            # 旧モデル(sales_point/sales_usage)からの後方互換 → 商談での使い方へ
+            deal_usage=data.get("deal_usage", data.get("sales_point", data.get("sales_usage", ""))),
+            sales_talk=data.get("sales_talk", ""),
+            rebuttal=data.get("rebuttal", ""),
             psychology_theme=data.get("psychology_theme", ""),
             psychology=data.get("psychology", ""),
-            sales_talk=data.get("sales_talk", ""),
             action=data.get("action", ""),
             sources=data.get("sources", []),
             status=data.get("status", STATUS_DRAFT),

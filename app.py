@@ -26,8 +26,13 @@ from chiba_asakan.delivery import (
     deliver,
     mark_manuscript_sent,
     send_line_test,
-    send_single_test,
+    send_manuscript_test,
     should_deliver,
+)
+from chiba_asakan.line_flex import (
+    DEFAULT_BODY_MAX,
+    DEFAULT_COLORS,
+    DEFAULT_TITLES,
 )
 from chiba_asakan.logging_config import setup_logging
 from chiba_asakan.models import (
@@ -39,6 +44,7 @@ from chiba_asakan.models import (
     STATUS_SENT,
     Manuscript,
     format_date_ja,
+    quote_talk,
 )
 from chiba_asakan.pipeline import collect_and_store
 from chiba_asakan.source_store import SourceItemStore
@@ -54,9 +60,82 @@ STATUS_LABEL = {
     STATUS_SENT: "📤 配信済み",
 }
 
-# AI生成結果を受け渡すためのセッションキー
-AI_FIELDS = ["theme", "chiba_topic", "sales_point", "psychology_theme",
-             "psychology", "sales_talk", "action"]
+# AI生成結果を受け渡すためのセッションキー（新9項目構成）
+AI_FIELDS = ["theme", "chiba_topic", "why_sales", "target_audience", "deal_usage",
+             "sales_talk", "rebuttal", "psychology_theme", "psychology", "action"]
+
+
+def _flex_style_from_state(date_str: str) -> dict:
+    """セッションに保存されたカード設定（色・本文量）を style dict にする。"""
+    return {
+        "colors": {
+            "chiba": st.session_state.get(f"col_chiba_{date_str}", DEFAULT_COLORS["chiba"]),
+            "talk": st.session_state.get(f"col_talk_{date_str}", DEFAULT_COLORS["talk"]),
+            "psych": st.session_state.get(f"col_psych_{date_str}", DEFAULT_COLORS["psych"]),
+        },
+        "body_max": st.session_state.get(f"bodymax_{date_str}", DEFAULT_BODY_MAX),
+    }
+
+
+def _render_card_preview(manuscript: Manuscript, style: dict) -> None:
+    """3枚カードを Streamlit 上で視覚的にプレビュー（LINE Flexの近似表示）。"""
+    colors = {**DEFAULT_COLORS, **(style.get("colors") or {})}
+    bmax = style.get("body_max", DEFAULT_BODY_MAX)
+    m = manuscript
+
+    def clip(t: str) -> str:
+        t = (t or "").strip()
+        return (t[:bmax].rstrip() + "…") if bmax and len(t) > bmax else (t or "（未入力）")
+
+    url = m.first_source_url()
+    btn = (
+        f'<div style="margin-top:10px"><span style="border:1px solid {{c}};color:{{c}};'
+        f'border-radius:8px;padding:5px 10px;font-size:11px">📎 出典を見る</span></div>'
+        if url else ""
+    )
+
+    def card(color, icon, title, subtitle, blocks, tag):
+        inner = "".join(
+            (f'<div style="font-size:11px;font-weight:bold;color:{color};margin-top:8px">{lbl}</div>'
+             if lbl else "")
+            + f'<div style="font-size:12.5px;color:#333;line-height:1.5">{body}</div>'
+            for lbl, body in blocks
+        )
+        tag_html = (
+            f'<div style="margin-top:8px"><span style="background:{color}1A;color:{color};'
+            f'border-radius:8px;padding:3px 8px;font-size:11px;font-weight:bold">{tag}</span></div>'
+            if tag else ""
+        )
+        return (
+            f'<div style="border:1px solid #eee;border-radius:14px;overflow:hidden;'
+            f'box-shadow:0 1px 4px rgba(0,0,0,.08)">'
+            f'<div style="background:{color};color:#fff;padding:12px 14px">'
+            f'<div style="font-weight:bold;font-size:15px">{icon} {title}</div>'
+            f'<div style="font-size:12px;opacity:.9">{subtitle}</div></div>'
+            f'<div style="padding:12px 14px">{inner}{tag_html}{btn.format(c=color)}</div></div>'
+        )
+
+    cols = st.columns(3)
+    with cols[0]:
+        st.markdown(card(
+            colors["chiba"], "📍", DEFAULT_TITLES["chiba"], clip(m.theme) if m.theme else " ",
+            [("", clip(m.chiba_topic)), ("💡 営業マンが見るべき理由", clip(m.why_sales))],
+            "🎯 刺さる: " + (clip(m.target_audience) if m.target_audience else "営業全般"),
+        ), unsafe_allow_html=True)
+    with cols[1]:
+        st.markdown(card(
+            colors["talk"], "🗣", DEFAULT_TITLES["talk"],
+            "刺さる: " + (m.target_audience[:30] if m.target_audience else "営業全般"),
+            [("", clip(quote_talk(m.sales_talk))), ("↩️ 切り返し例", clip(m.rebuttal)),
+             ("🤝 商談での使い方", clip(m.deal_usage))],
+            None,
+        ), unsafe_allow_html=True)
+    with cols[2]:
+        st.markdown(card(
+            colors["psych"], "🧠", DEFAULT_TITLES["psych"], "テーマ：" + (m.psychology_theme or "—"),
+            [("", clip(m.psychology)), ("✅ 今日のアクション", clip(m.action))],
+            None,
+        ), unsafe_allow_html=True)
 
 
 @st.cache_resource
@@ -434,20 +513,37 @@ def tab_review() -> None:
         st.error("原稿の読み込みに失敗しました。")
         return
 
-    col1, col2 = st.columns([2, 1])
-    with col1:
-        st.subheader("LINE プレビュー")
+    st.caption(
+        f"配信日: {format_date_ja(manuscript.date_obj)} ／ "
+        f"状態: {STATUS_LABEL.get(manuscript.status, manuscript.status)} ／ "
+        f"本文 約 {manuscript.char_count()} 字"
+    )
+    if not manuscript.is_complete():
+        st.warning("未入力: " + " / ".join(manuscript.missing_sections()))
+
+    # --- カードのデザイン調整（色・本文量） ---
+    with st.expander("🎨 カードのデザイン調整（色・本文量）", expanded=False):
+        cc1, cc2, cc3, cc4 = st.columns(4)
+        cc1.color_picker("千葉ネタ（青）", DEFAULT_COLORS["chiba"], key=f"col_chiba_{date_str}")
+        cc2.color_picker("営業トーク（緑）", DEFAULT_COLORS["talk"], key=f"col_talk_{date_str}")
+        cc3.color_picker("心理（オレンジ）", DEFAULT_COLORS["psych"], key=f"col_psych_{date_str}")
+        cc4.slider("1カード本文の最大文字数", 60, 400, DEFAULT_BODY_MAX, key=f"bodymax_{date_str}")
+    style = _flex_style_from_state(date_str)
+
+    # --- プレビュー（カード / テキスト） ---
+    pv1, pv2 = st.tabs(["🪪 カードプレビュー（3枚）", "📄 テキスト表示"])
+    with pv1:
+        _render_card_preview(manuscript, style)
+        st.caption("※ LINE Flexの近似表示です。実機の見え方はテスト配信で確認してください。")
+    with pv2:
         st.text(manuscript.to_line_text())
 
-    with col2:
-        st.subheader("操作")
-        st.write(f"**配信日:** {format_date_ja(manuscript.date_obj)}")
-        st.write(f"**状態:** {STATUS_LABEL.get(manuscript.status, manuscript.status)}")
-        st.write(f"**本文:** 約 {manuscript.char_count()} 字")
-        if not manuscript.is_complete():
-            st.warning("未入力: " + " / ".join(manuscript.missing_sections()))
+    st.divider()
+    op1, op2 = st.columns(2)
 
-        # 承認切替
+    # --- 承認 + テスト配信 ---
+    with op1:
+        st.subheader("承認 / テスト配信")
         if manuscript.status != STATUS_APPROVED:
             if st.button("✅ この原稿を承認する", type="primary", use_container_width=True,
                          disabled=not manuscript.is_complete()):
@@ -461,23 +557,25 @@ def tab_review() -> None:
                 store.save(manuscript)
                 st.rerun()
 
-        st.divider()
-        # テスト配信（自分のLINEへ実送信）
         st.markdown("**🧪 テスト配信（自分のLINEへ）**")
         if not cfg.line_test_user_id:
             st.caption("`.env` の `LINE_TEST_USER_ID` を設定すると使えます。")
-        if st.button("自分に送ってみる", disabled=not cfg.line_test_user_id, use_container_width=True):
-            ok, err = send_single_test(cfg, manuscript, cfg.line_test_user_id)
-            st.success("送信しました。LINEを確認してください。") if ok else st.error(f"失敗: {err}")
+        test_mode = st.radio("送信形式", ["カード（Flex）", "テキスト"], horizontal=True,
+                             key=f"testmode_{date_str}")
+        if st.button("自分に送ってみる", disabled=not cfg.line_test_user_id,
+                     use_container_width=True):
+            ok, err, used = send_manuscript_test(
+                cfg, manuscript, use_flex=test_mode.startswith("カード"), flex_style=style
+            )
+            if ok:
+                st.success(f"送信しました（{used}）。LINEを確認してください。")
+            else:
+                st.error(f"失敗: {err}")
+                st.caption("詳細は logs/line_test.log に記録しました。")
 
-        # ドライラン
-        if st.button("📊 ドライラン（対象者数を確認）", use_container_width=True):
-            res = deliver(cfg, manuscript, dry_run=True)
-            st.success(f"配信対象 {res.target_count} 名（実送信なし）")
-
-        st.divider()
-        # 本配信
-        st.markdown("**📤 本配信**")
+    # --- 本配信（Flex標準） ---
+    with op2:
+        st.subheader("📤 本配信（Flex標準・失敗時テキスト）")
         ok, reason = should_deliver(manuscript)
         missing = cfg.missing_for_delivery()
         try:
@@ -487,15 +585,22 @@ def tab_review() -> None:
         except Exception as exc:  # noqa: BLE001
             subs, resolution, target = None, None, 0
             st.error(f"購読者読み込み失敗: {exc}")
+
+        if st.button("📊 ドライラン（対象者数を確認）", use_container_width=True):
+            res = deliver(cfg, manuscript, dry_run=True)
+            st.success(f"配信対象 {res.target_count} 名（実送信なし）")
+
         if not ok:
             st.info(f"本配信できません: {reason}")
         if missing:
             st.error("設定不足:\n\n- " + "\n- ".join(missing))
         confirm = st.checkbox(f"内容を確認しました。{target} 名に配信します", key=f"confirm_{date_str}")
         send_disabled = not (ok and not missing and target > 0 and confirm and subs is not None)
-        if st.button("📤 LINEで本配信", type="primary", disabled=send_disabled, use_container_width=True):
+        if st.button("📤 LINEで本配信（カード）", type="primary", disabled=send_disabled,
+                     use_container_width=True):
             with st.spinner("配信中…"):
-                result = deliver(cfg, manuscript, dry_run=False, subscribers=subs)
+                result = deliver(cfg, manuscript, dry_run=False, subscribers=subs,
+                                 use_flex=True, flex_style=style)
                 mark_manuscript_sent(manuscript, result)
                 store.save(manuscript)
             st.success(f"配信完了：成功 {result.sent_count} ／ 失敗 {result.failed_count}")

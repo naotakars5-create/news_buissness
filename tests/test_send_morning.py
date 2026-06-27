@@ -18,9 +18,9 @@ ARGS = ["--to-test-user", "--date", DATE]  # 購読者CSV不要モードで判�
 
 def _manuscript(status: str) -> Manuscript:
     return Manuscript(
-        date=DATE, theme="t", chiba_topic="a", sales_point="a",
-        psychology_theme="社会的証明", psychology="a", sales_talk="x",
-        action="a", status=status,
+        date=DATE, theme="t", chiba_topic="a", why_sales="a", target_audience="a",
+        deal_usage="a", sales_talk="x", rebuttal="a",
+        psychology_theme="社会的証明", psychology="a", action="a", status=status,
     )
 
 

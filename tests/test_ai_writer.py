@@ -16,10 +16,13 @@ from chiba_asakan.sources.source_base import SourceItem
 _FAKE_OUTPUT = {
     "theme": "幕張の新店オープン",
     "chiba_topic": "幕張に新しい商業施設がオープンしました。",
-    "sales_point": "来店動線の変化は商談のきっかけになります。",
+    "why_sales": "来店動線の変化は商談のきっかけになります。",
+    "target_audience": "不動産・住宅・小売向け法人営業",
+    "deal_usage": "雑談の入りに地元の変化として触れる。",
+    "sales_talk": "最近この辺り、人の流れ変わりましたよね",
+    "rebuttal": "『今は不要』には『情報だけでも』と返す。",
     "psychology_theme": "社会的証明",
     "psychology": "人は多くの人が選ぶものを選びがちです。",
-    "sales_talk": "最近この辺り、人の流れ変わりましたよね",
     "action": "今日の訪問先に幕張の話題を1つ持っていく。",
 }
 
@@ -56,8 +59,8 @@ def _items():
 
 def test_generate_manuscript_dict_has_all_sections(cfg, fake_anthropic):
     data = generate_manuscript_dict(cfg, date(2026, 6, 24), _items())
-    for key in ["theme", "chiba_topic", "sales_point", "psychology_theme",
-                "psychology", "sales_talk", "action", "sources"]:
+    for key in ["theme", "chiba_topic", "why_sales", "target_audience", "deal_usage",
+                "sales_talk", "rebuttal", "psychology_theme", "psychology", "action", "sources"]:
         assert key in data
     assert data["theme"]
 
@@ -81,6 +84,7 @@ def test_generate_manuscript_object_complete_and_line_text(cfg, fake_anthropic):
     assert m.is_complete()
     text = m.to_line_text()
     assert "【ちば営業朝刊｜2026/06/24】" in text
-    assert "■ 今日の千葉ネタ" in text
+    assert "■ 今日の千葉トピック" in text
+    assert "■ 切り返し例" in text
     assert "■ 出典" in text
     assert "https://example.com/chiba1" in text  # 出典URLが本文に入る
