@@ -1,0 +1,52 @@
+[
+  {
+    "id": "589bcb8fc6c2b605",
+    "date": "2026-07-02",
+    "source_name": "PR TIMES",
+    "title": "2026年もZOZOマリンスタジアムが丹波篠山市一色に！？　「丹波篠山黒豆ナイター」を開催",
+    "url": "https://prtimes.jp/main/html/rd/p/000000091.000127657.html",
+    "published_at": "2026-07-02",
+    "summary": "[丹波篠山市] 今年も中森俊介投手（篠山東中学校出身・丹波篠山ふるさと大使）と千葉ロッテマリーンズを応援する「丹波篠山黒豆ナイター」が2026年7月7日（火）に開催します。 当日は丹波篠山市の魅力がたくさん詰まった1日に...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 14,
+    "score_reason": "千葉:千葉,千葉県,千葉ロッテ,マリーンズ / 若手:ロッテ,マリーンズ / 新しさ:5/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 4,
+      "freshness": 5,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "f8738d2b5b61773c",
+    "date": "2026-07-02",
+    "source_name": "PR TIMES",
+    "title": "『ディズニー スパークリンク・スターズ』キャラクター公開！",
+    "url": "https://prtimes.jp/main/html/rd/p/000000224.000044804.html",
+    "published_at": "2026-07-02",
+    "summary": "[株式会社coly] [画像1: https://prcdn.freetls.fastly.net/release_image/44804/224/44804-224-0ebf44a680aca20c9e0aabb12bdf3525-3900x2340.png?width=536&quality=85%2C75&format=jpeg&auto=webp&fit=bounds&...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 10,
+    "score_reason": "千葉:千葉,ディズニー,千葉県 / 新しさ:5/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 0,
+      "freshness": 5,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  }
+]
