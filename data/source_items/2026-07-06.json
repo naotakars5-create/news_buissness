@@ -1,0 +1,52 @@
+[
+  {
+    "id": "5b980426c15ad3f5",
+    "date": "2026-07-06",
+    "source_name": "PR TIMES",
+    "title": "ヤマシタ、株式会社優ケアの介護用品レンタル・住宅改修事業を承継千葉県中東部に「東金営業所」を新設し、サービス提供エリアを拡大",
+    "url": "https://prtimes.jp/main/html/rd/p/000000076.000072683.html",
+    "published_at": "2026-07-06",
+    "summary": "[ヤマシタ] 介護用品・福祉用具レンタルの株式会社ヤマシタ（本社：静岡県島田市、代表取締役社長：山下和洋、以下「ヤマシタ」）は、2026年7月1日付で株式会社 優ケア（本社：千葉県千葉市緑区、代表者：山老 広明）の介護...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 12,
+    "score_reason": "千葉:千葉,東金,千葉県 / ビジネス:本社 / 新しさ:5/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 2,
+      "young_appeal": 0,
+      "freshness": 5,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "b76c82f075fe5605",
+    "date": "2026-07-06",
+    "source_name": "PR TIMES",
+    "title": "Lexar、最大14,000MB/sのPCIe 5.0対応M.2 NVMe SSD「NM990」「Professional NM1090 PRO」を日本発売",
+    "url": "https://prtimes.jp/main/html/rd/p/000000138.000131068.html",
+    "published_at": "2026-07-06",
+    "summary": "[株式会社旭東トレーディング] [画像1: https://prcdn.freetls.fastly.net/release_image/131068/138/131068-138-68ea16e0a4274caf3466c0ec3a66adce-2249x750.jpg?width=536&quality=85%2C75&format=jpeg&auto=webp&fit=bounds...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 10,
+    "score_reason": "千葉:千葉,旭,千葉県 / 新しさ:5/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 0,
+      "freshness": 5,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  }
+]
