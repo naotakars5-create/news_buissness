@@ -1,0 +1,102 @@
+[
+  {
+    "id": "46a92bd15f73da24",
+    "date": "2026-07-07",
+    "source_name": "PR TIMES",
+    "title": "千葉市と一般社団法人Spiceが協働し、若者の新しい居場所「ちしろベース」を期間限定で開設",
+    "url": "https://prtimes.jp/main/html/rd/p/000000027.000130611.html",
+    "published_at": "2026-07-07",
+    "summary": "[一般社団法人Spice] 一般社団法人Spice（千葉県千葉市）は、千葉市が実施する「若者の居場所づくり実証事業」の運営団体として、2026年8月より若者向けの居場所「ちしろベース」を千葉市若葉区・千城台コミュニティセンターに開設し...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 16,
+    "score_reason": "千葉:千葉,千葉県 / 若手:限定 / 雑談:限定 / 提案:法人 / 新しさ:5/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 2,
+      "freshness": 5,
+      "smalltalk": 2,
+      "proposal": 2
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "dc7b2f092813eddc",
+    "date": "2026-07-07",
+    "source_name": "PR TIMES",
+    "title": "千葉商科大学の授業にFP出身の採用担当者が登壇。「働くことの解像度を高める」キャリア対話を実施",
+    "url": "https://prtimes.jp/main/html/rd/p/000000262.000059559.html",
+    "published_at": "2026-07-07",
+    "summary": "[ブロードマインド株式会社] 「金融の力を解き放つ」というパーパスのもと、ライフプラン実現を支援する金融サービスを開発・提供するブロードマインド株式会社（本社：東京都渋谷区、代表取締役社長：伊藤清、証券コード：7343、以下：当社...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 14,
+    "score_reason": "千葉:千葉,千葉県 / ビジネス:本社 / 提案:採用 / 新しさ:5/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 2,
+      "young_appeal": 0,
+      "freshness": 5,
+      "smalltalk": 0,
+      "proposal": 2
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "727f89c78d692aa3",
+    "date": "2026-07-07",
+    "source_name": "PR TIMES",
+    "title": "農業高校生がドローン・AIを活用したスマート農業を学ぶ　北斗市・北海道大野農業高等学校・DITが連携協定を締結",
+    "url": "https://prtimes.jp/main/html/rd/p/000000016.000024265.html",
+    "published_at": "2026-07-07",
+    "summary": "[ＤＩＴ] 独立系システムインテグレーターであるデジタル・インフォメーション・テクノロジー株式会社（本社：東京都中央区、代表取締役社長執行役員：市川 聡、東証プライム市場：3916、以下DIT）は、2026年7月７日、北斗...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 12,
+    "score_reason": "千葉:千葉,市川,千葉県 / ビジネス:本社 / 新しさ:5/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 2,
+      "young_appeal": 0,
+      "freshness": 5,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "b5233ad9217f084a",
+    "date": "2026-07-07",
+    "source_name": "PR TIMES",
+    "title": "八千代エンジニヤリングの設計者専用AIアシスタント「TERNO」7月1日より一般販売を開始　CCTはAI差分抽出・検索機能の開発に協力",
+    "url": "https://prtimes.jp/main/html/rd/p/000000012.000177686.html",
+    "published_at": "2026-07-07",
+    "summary": "[株式会社コアコンセプト・テクノロジー] 株式会社コアコンセプト・テクノロジー（本社：東京都豊島区、代表取締役社長CEO：金子 武史、以下「当社」）は、八千代エンジニヤリング株式会社（本店：東京都台東区、代表取締役社長執行役員：高橋 努、以下「...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 12,
+    "score_reason": "千葉:千葉,八千代,千葉県 / ビジネス:本社 / 新しさ:5/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 2,
+      "young_appeal": 0,
+      "freshness": 5,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  }
+]
