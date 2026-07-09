@@ -78,3 +78,13 @@
 2026-07-08 06:40:17,184 [INFO] chiba_asakan.source_store: ネタを保存: 2026-07-08.json (7件)
 2026-07-08 06:40:17,185 [INFO] chiba_asakan.pipeline: 収集結果: 取得=7 除外=0 候補(>=20点)=0
 2026-07-08 06:40:17,185 [INFO] chiba_asakan.collect_news: === ネタ収集終了: 取得=7 候補=0 除外=0 ===
+2026-07-09 10:31:02,763 [INFO] chiba_asakan.collect_news: === ネタ収集開始: date=2026-07-09 ===
+2026-07-09 10:31:02,806 [INFO] chiba_asakan.sources.manager: ソース構築: 有効=4 / フィード設定済み=PR TIMES
+2026-07-09 10:31:05,415 [INFO] chiba_asakan.sources: PR TIMES: 5 件取得
+2026-07-09 10:31:05,415 [INFO] chiba_asakan.sources: 千葉県報道発表: 0 件取得
+2026-07-09 10:31:05,415 [INFO] chiba_asakan.sources: ちば観光・イベント: 0 件取得
+2026-07-09 10:31:05,415 [INFO] chiba_asakan.sources: 千葉の商業・経済: 0 件取得
+2026-07-09 10:31:05,415 [INFO] chiba_asakan.sources.manager: 巡回完了: 合計 5 件（重複除去後）
+2026-07-09 10:31:05,416 [INFO] chiba_asakan.source_store: ネタを保存: 2026-07-09.json (5件)
+2026-07-09 10:31:05,416 [INFO] chiba_asakan.pipeline: 収集結果: 取得=5 除外=1 候補(>=20点)=0
+2026-07-09 10:31:05,416 [INFO] chiba_asakan.collect_news: === ネタ収集終了: 取得=5 候補=0 除外=1 ===

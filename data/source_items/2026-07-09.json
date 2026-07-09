@@ -1,0 +1,129 @@
+[
+  {
+    "id": "d5d82e1f496eefce",
+    "date": "2026-07-09",
+    "source_name": "PR TIMES",
+    "title": "【舞浜イクスピアリ】この季節だけの爽快感。手作りジェラートが美しく溶け合う、2つの贅沢フルーツソーダが「a le Loïc」より7月13日（月）より期間限定で新登場！",
+    "url": "https://prtimes.jp/main/html/rd/p/000000084.000177867.html",
+    "published_at": "2026-07-09",
+    "summary": "[株式会社クリエイト・レストランツ・ホールディングス] 株式会社クリエイト・レストランツ・ホールディングス（本社：東京都品川区、代表取締役社長：川井潤）のグループ会社である、株式会社クリエイト・ダイニング（本社：東京都品川区、代表取締役社長：原田一正）...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 18,
+    "score_reason": "千葉:千葉,舞浜,千葉県 / ビジネス:本社 / 若手:限定 / 雑談:限定,季節 / 新しさ:5/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 2,
+      "young_appeal": 2,
+      "freshness": 5,
+      "smalltalk": 4,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "b9bf2c47e6c0b028",
+    "date": "2026-07-09",
+    "source_name": "PR TIMES",
+    "title": "Amazonプライムデーで狙いたいV60対応SDカード。Lexar Professional SILVER PRO SDXC UHS-IIカードを容量別にチェック",
+    "url": "https://prtimes.jp/main/html/rd/p/000000143.000131068.html",
+    "published_at": "2026-07-09",
+    "summary": "[株式会社旭東トレーディング] [画像1: https://prcdn.freetls.fastly.net/release_image/131068/143/131068-143-f89f8ba77e4d86088d8c21ae17c3d03f-3175x1786.jpg?width=536&quality=85%2C75&format=jpeg&auto=webp&fit=bound...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 14,
+    "score_reason": "千葉:千葉,旭,千葉県 / ビジネス:DX / 提案:DX / 新しさ:5/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 2,
+      "young_appeal": 0,
+      "freshness": 5,
+      "smalltalk": 0,
+      "proposal": 2
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "28f48b65f1f48aa2",
+    "date": "2026-07-09",
+    "source_name": "PR TIMES",
+    "title": "川崎市稗原小学校でふれあいスポーツ教室を実施",
+    "url": "https://prtimes.jp/main/html/rd/p/000000108.000051247.html",
+    "published_at": "2026-07-09",
+    "summary": "[NECレッドロケッツ川崎] NECレッドロケッツ川崎所属の大工園彩夏選手と長谷部奈香選手が川崎市川崎市稗原小学校で、ふれあいスポーツ教室を実施いたしました。 R-CONNECTION 活動：川崎市稗原小学校でふれあいスポーツ教室の実施 実施日...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 12,
+    "score_reason": "千葉:千葉,市川,千葉県 / 若手:スポーツ / 新しさ:5/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 2,
+      "freshness": 5,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "483d6700f20e3a06",
+    "date": "2026-07-09",
+    "source_name": "PR TIMES",
+    "title": "ペット保険「どうぶつ健保」、保有契約件数140万件を突破",
+    "url": "https://prtimes.jp/main/html/rd/p/000000266.000028421.html",
+    "published_at": "2026-07-09",
+    "summary": "[アニコムグループ] ペット保険シェアNo.１（※１）のアニコム損害保険株式会社（東京都新宿区、代表取締役 野田真吾、以下 アニコム損保）は、このたびペット保険「どうぶつ健保」の保有契約件数が140万件を突破（※２）いたしました...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 10,
+    "score_reason": "千葉:千葉,野田,千葉県 / 新しさ:5/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 0,
+      "freshness": 5,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": true,
+    "exclude_reason": "委託・契約系のため除外: 契約",
+    "exclude_matched": [
+      "契約"
+    ],
+    "used_in_draft": false
+  },
+  {
+    "id": "8f5913b063865920",
+    "date": "2026-07-09",
+    "source_name": "PR TIMES",
+    "title": "ジモティースポット全国初！船橋店にて無人営業の実証を7月より開始",
+    "url": "https://prtimes.jp/main/html/rd/p/000000530.000006029.html",
+    "published_at": "2026-07-09",
+    "summary": "[株式会社ジモティー] [画像1: https://prcdn.freetls.fastly.net/release_image/6029/530/6029-530-7ae2d95186159f2f627b5363a4dbd904-1920x1280.jpg?width=536&quality=85%2C75&format=jpeg&auto=webp&fit=bounds&am...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 10,
+    "score_reason": "千葉:千葉,船橋,千葉県 / 新しさ:5/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 0,
+      "freshness": 5,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  }
+]
