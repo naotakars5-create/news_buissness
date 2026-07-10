@@ -1,0 +1,79 @@
+[
+  {
+    "id": "47b5f2b2e6b39bfe",
+    "date": "2026-07-10",
+    "source_name": "PR TIMES",
+    "title": "Lexar製品を購入して豪華賞品が当たる。購入者限定抽選キャンペーンを実施",
+    "url": "https://prtimes.jp/main/html/rd/p/000000147.000131068.html",
+    "published_at": "2026-07-10",
+    "summary": "[株式会社旭東トレーディング] Lexar（レキサー）は、2026年7月1日から7月15日までにLexar製品を購入したユーザーを対象に、購入者限定の抽選キャンペーンを実施する。 キャンペーン期間中にLexar製品を購入したユーザーは、購入明細、レシー...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 14,
+    "score_reason": "千葉:千葉,旭,千葉県 / 若手:限定 / 雑談:限定 / 新しさ:5/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 2,
+      "freshness": 5,
+      "smalltalk": 2,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "46a9a40b669d1843",
+    "date": "2026-07-10",
+    "source_name": "PR TIMES",
+    "title": "不動産投資型クラウドファンディング「TASUKI FUNDS」タスキ キャピタル重視型 第20号ファンド-S2（シリーズ2）の投資募集のお知らせ",
+    "url": "https://prtimes.jp/main/html/rd/p/000000168.000051940.html",
+    "published_at": "2026-07-10",
+    "summary": "[タスキホールディングス] 株式会社タスキホールディングス（本社：東京都港区、代表取締役社長：柏村 雄）のグループ会社である株式会社タスキ（本社：東京都港区、代表取締役社長：村田浩司、以下、タスキ）は、不動産投資型クラウドフ...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 12,
+    "score_reason": "千葉:千葉,柏,千葉県 / ビジネス:本社 / 新しさ:5/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 2,
+      "young_appeal": 0,
+      "freshness": 5,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": true,
+    "exclude_reason": "委託・契約系のため除外: 募集",
+    "exclude_matched": [
+      "募集"
+    ],
+    "used_in_draft": false
+  },
+  {
+    "id": "810b04f56575f3b7",
+    "date": "2026-07-10",
+    "source_name": "PR TIMES",
+    "title": "ディズニー＆ピクサー映画最新作『トイ・ストーリー５』天神エリアを舞台にタイアップキャンペーンを開催！",
+    "url": "https://prtimes.jp/main/html/rd/p/000000973.000017692.html",
+    "published_at": "2026-07-10",
+    "summary": "[にしてつグループ] [画像1: https://prcdn.freetls.fastly.net/release_image/17692/973/17692-973-2c0ce4958af5f126f738fb5e6292d313-1143x620.jpg?width=536&quality=85%2C75&format=jpeg&auto=webp&fit=bounds&a...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 10,
+    "score_reason": "千葉:千葉,ディズニー,千葉県 / 新しさ:5/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 0,
+      "freshness": 5,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  }
+]
