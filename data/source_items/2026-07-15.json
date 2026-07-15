@@ -1,0 +1,104 @@
+[
+  {
+    "id": "ce6993a3e7301c35",
+    "date": "2026-07-15",
+    "source_name": "PR TIMES",
+    "title": "【ちば経済産業新聞】第3回ビジネス交流会、7月28日（火）開催決定！",
+    "url": "https://prtimes.jp/main/html/rd/p/000000126.000075250.html",
+    "published_at": "2026-07-14",
+    "summary": "[株式会社千葉日報社] 株式会社千葉日報デジタル（千葉市）は2026年7月28日（火）、中小企業特化の地域経済メディア「ちば経済産業新聞」の第3回ビジネス交流会を開催します。 第3回のテーマは「地域連携・産学連携」。少人数コミュニ...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 13,
+    "score_reason": "千葉:千葉,千葉県 / 提案:企業,中小企業 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 4
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "6e026d8ed593f6b6",
+    "date": "2026-07-15",
+    "source_name": "PR TIMES",
+    "title": "ZOZOTOWNにMODE COMMUTERが待望の出店！2026SS全ラインナップ解禁",
+    "url": "https://prtimes.jp/main/html/rd/p/000000217.000024046.html",
+    "published_at": "2026-07-14",
+    "summary": "[株式会社キューブ] [画像1: https://prcdn.freetls.fastly.net/release_image/24046/217/24046-217-164c4b108c64b47d3993c8804ca0c81a-1920x860.jpg?width=536&quality=85%2C75&format=jpeg&auto=webp&fit=bounds&a...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 11,
+    "score_reason": "千葉:千葉,千葉県,ZOZO / ビジネス:出店 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 2,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "52c491e2002cb25b",
+    "date": "2026-07-15",
+    "source_name": "PR TIMES",
+    "title": "遠隔地からの転居者に最大10万円の引越補助金を支給開始",
+    "url": "https://prtimes.jp/main/html/rd/p/000000008.000144335.html",
+    "published_at": "2026-07-14",
+    "summary": "[社会福祉法人 恵洋会] 社会福祉法人恵洋会(所在地：千葉県長生郡睦沢町、理事長：山本宗大)は2026年7月、多様な形での入職を積極的に支援する取り組みの一環として、遠隔地から転居して入職する職員に対し、引越費用として最大10万円を...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 11,
+    "score_reason": "千葉:千葉,千葉県 / 提案:法人 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 2
+    },
+    "excluded": true,
+    "exclude_reason": "行政調達・補助/公募/入札系のため除外: 補助金",
+    "exclude_matched": [
+      "補助金"
+    ],
+    "used_in_draft": false
+  },
+  {
+    "id": "21b0ca9e0108f630",
+    "date": "2026-07-15",
+    "source_name": "PR TIMES",
+    "title": "千葉県沖でのCCS試掘事業に対し、地域住民らが不服申立",
+    "url": "https://prtimes.jp/main/html/rd/p/000000098.000077060.html",
+    "published_at": "2026-07-14",
+    "summary": "[FoE Japan] 2026年4月15日に、千葉県九十九里沖で行われるCCS（二酸化炭素回収・貯留）事業のための試掘事業を経済産業大臣が許可したことを受け、大網白里市や匝瑳市の地域住民ら5名とFoE Japanは、試掘許可を見直すよう...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 9,
+    "score_reason": "千葉:千葉,大網,匝瑳,千葉県 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  }
+]
