@@ -1,0 +1,102 @@
+[
+  {
+    "id": "d73d962237ada492",
+    "date": "2026-07-17",
+    "source_name": "PR TIMES",
+    "title": "APT、稟議・社内提案の通し方に関するオンラインセミナーを8月7日開催",
+    "url": "https://prtimes.jp/main/html/rd/p/000000070.000058277.html",
+    "published_at": "2026-07-16",
+    "summary": "[株式会社APT] 物流システムエンジニアリングを手掛ける株式会社APT（本社：千葉県千葉市、代表取締役社長：井上 良太、以下 APT）は、2026年8月7日（金）に、オンラインセミナー「失敗しない稟議のつくり方 ～現場の正論が経営...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 13,
+    "score_reason": "千葉:千葉,千葉県 / ビジネス:本社 / 提案:物流 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 2,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 2
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "f93f7a06e47dea3a",
+    "date": "2026-07-17",
+    "source_name": "PR TIMES",
+    "title": "NTTロジスコ、エンタメ物流の平時5倍の波動を「t-Sort MAS」で吸収",
+    "url": "https://prtimes.jp/main/html/rd/p/000000095.000051623.html",
+    "published_at": "2026-07-16",
+    "summary": "[プラスオートメーション株式会社] 物流ロボティクスサービス「RaaS」（Robotics as a Service）を展開するプラスオートメーション株式会社（以下「+A」）は、株式会社NTTロジスコの東日本エンターテイメントロジスティクスセンター（千葉県八千代...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 11,
+    "score_reason": "千葉:千葉,八千代,千葉県 / 提案:物流 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 2
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "659c451cea30e300",
+    "date": "2026-07-17",
+    "source_name": "PR TIMES",
+    "title": "魚に合う「銚子エール」、すし銚子丸全92店舗で販売開始",
+    "url": "https://prtimes.jp/main/html/rd/p/000000029.000045971.html",
+    "published_at": "2026-07-16",
+    "summary": "[チョウシ・チアーズ株式会社] チョウシ・チアーズ株式会社（本社：千葉県銚子市、代表取締役：佐久間快枝）は、当社が企画・販売するクラフトビール「銚子ビール」の魚に合うをテーマにした「銚子エール」が、2026年7月24日（金）より株式会...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 11,
+    "score_reason": "千葉:千葉,銚子,千葉県 / ビジネス:本社 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 2,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "040e11641e46728d",
+    "date": "2026-07-17",
+    "source_name": "PR TIMES",
+    "title": "公開1日で130万アクセスを達成した「ペットカードジェネレーター」の”正式版”が本格始動！野田クリスタル考案『うちの子カード伝説』～名称変更やレイドバトル機能・図鑑機能の実装など大型アップデート～",
+    "url": "https://prtimes.jp/main/html/rd/p/000005180.000029501.html",
+    "published_at": "2026-07-16",
+    "summary": "[吉本興業株式会社] この度、Google のAI「Gemini」を活用したサービス「ペットカードジェネレーター」を大幅にアップデートし、新名称「うちの子カード伝説」として、2026年7月15日（水）より正式版の提供を開始します。 [画像1: ht...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 9,
+    "score_reason": "千葉:千葉,野田,千葉県 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  }
+]
