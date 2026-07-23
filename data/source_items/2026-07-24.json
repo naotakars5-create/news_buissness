@@ -1,0 +1,54 @@
+[
+  {
+    "id": "13e248c3f0be954b",
+    "date": "2026-07-24",
+    "source_name": "PR TIMES",
+    "title": "spiritale ー ワンダーフェスティバル2026［夏］ あみあみホビーキャンプ内で展示！『僕のヒーローアカデミア ミルコ-Rabbit- 1/7スケールフィギュア』（彩色原型）などを初公開",
+    "url": "https://prtimes.jp/main/html/rd/p/000000756.000041970.html",
+    "published_at": "2026-07-23",
+    "summary": "[株式会社タイトー] 株式会社タイトー（本社：東京都新宿区、以下タイトー）が展開する高品質フィギュアブランド「spiritale（スピリテイル）」は、2026年7月26日（日）に千葉・幕張メッセで開催される世界最大級の造形・フィギュ...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 15,
+    "score_reason": "千葉:千葉,幕張,千葉県,幕張メッセ / ビジネス:本社 / 若手:フェス / 雑談:フェス / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 2,
+      "young_appeal": 2,
+      "freshness": 4,
+      "smalltalk": 2,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "72c3bbcb6380d66e",
+    "date": "2026-07-24",
+    "source_name": "PR TIMES",
+    "title": "日本の不動産をアジアの投資家へ。クロスボーダー不動産プラットフォーム「PropertyBridge.asia」、掲載不動産会社の募集を開始",
+    "url": "https://prtimes.jp/main/html/rd/p/000000027.000036971.html",
+    "published_at": "2026-07-23",
+    "summary": "[株式会社Propre Base] Property Bridge Pte. Ltd.（所在地：シンガポール、代表：Kityin POW）と株式会社Propre Base（所在地：東京、代表：白井 久也）は、日本の不動産とアジアの投資家をつなぐクロスボーダー不動産プラットフォーム...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 9,
+    "score_reason": "千葉:千葉,白井,千葉県 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": true,
+    "exclude_reason": "委託・契約系のため除外: 募集",
+    "exclude_matched": [
+      "募集"
+    ],
+    "used_in_draft": false
+  }
+]
