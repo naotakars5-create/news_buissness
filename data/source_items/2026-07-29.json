@@ -1,0 +1,77 @@
+[
+  {
+    "id": "6f0dd1b326d72e75",
+    "date": "2026-07-29",
+    "source_name": "PR TIMES",
+    "title": "旭東みらいテクノロジー、最新機能を搭載したAIカメラ紹介に合わせAI映像セキュリティの「5段階設計フレームワーク」を公開",
+    "url": "https://prtimes.jp/main/html/rd/p/000000153.000131068.html",
+    "published_at": "2026-07-28",
+    "summary": "[株式会社旭東トレーディング] 株式会社旭東みらいテクノロジー（本社：東京都港区、以下「当社」）は、最新機能を搭載したAIカメラを発表し、それに合わせてAI映像セキュリティを提案する際の基本的な考え方を整理した「AI映像セキュリティ5段...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 11,
+    "score_reason": "千葉:千葉,旭,千葉県 / ビジネス:本社 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 2,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "5612455cdcaad4e1",
+    "date": "2026-07-29",
+    "source_name": "PR TIMES",
+    "title": "ろう・難聴者が感じる「聞こえない・聞こえにくい世界」を360°映像と空間音響で体験する「Deaf VR」",
+    "url": "https://prtimes.jp/main/html/rd/p/000000013.000023822.html",
+    "published_at": "2026-07-28",
+    "summary": "[株式会社シー・エヌ・エス] 株式会社シー・エヌ・エス（所在地：東京都目黒区、代表取締役：久保 隆志 / 古田 旭、以下、当社）は、ろう・難聴者が日常で感じる「聞こえない・聞こえにくい世界」を疑似体験できるVRコンテンツ「Deaf VR」の...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 9,
+    "score_reason": "千葉:千葉,旭,千葉県 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "620802eae61bc72e",
+    "date": "2026-07-29",
+    "source_name": "PR TIMES",
+    "title": "ZOZO研究所、コンピュータービジョン分野のトップカンファレンス「ECCV 2026」にて論文採択",
+    "url": "https://prtimes.jp/main/html/rd/p/000000565.000096287.html",
+    "published_at": "2026-07-28",
+    "summary": "[株式会社ZOZO] [画像: https://prcdn.freetls.fastly.net/release_image/96287/565/96287-565-30301a0c3631225a9008cca996ef901e-1600x900.jpg?width=536&quality=85%2C75&format=jpeg&auto=webp&fit=bounds&am...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 9,
+    "score_reason": "千葉:千葉,千葉県,ZOZO / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  }
+]
