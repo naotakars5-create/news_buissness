@@ -1,0 +1,52 @@
+[
+  {
+    "id": "03a2c97fd4400333",
+    "date": "2026-07-31",
+    "source_name": "PR TIMES",
+    "title": "松戸エリアに新倉庫を開設、多品種小ロット物流の取扱い拡充",
+    "url": "https://prtimes.jp/main/html/rd/p/000000038.000097661.html",
+    "published_at": "2026-07-30",
+    "summary": "[澁澤倉庫株式会社] 澁澤倉庫株式会社（本社：東京都江東区、代表取締役社長：大隅毅）は、中期経営計画2026 の重点施策である「物流事業の収益力強化」の一環として、当社が強みを持つ多品種小ロット貨物を取扱う新拠点「松戸第4 ...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 13,
+    "score_reason": "千葉:千葉,松戸,千葉県 / ビジネス:本社 / 提案:物流 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 2,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 2
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "431bbd82e71c4f30",
+    "date": "2026-07-31",
+    "source_name": "PR TIMES",
+    "title": "大和翼空選手 FC琉球（J3）へ完全移籍のお知らせ",
+    "url": "https://prtimes.jp/main/html/rd/p/000000007.000179199.html",
+    "published_at": "2026-07-30",
+    "summary": "[市川SC] 日頃より市川SCへ温かいご声援をいただき、誠にありがとうございます。 この度、当クラブに所属する大和翼空選手が、FC琉球（J3）へ完全移籍することが決定いたしましたので、お知らせいたします。 大和選手は、...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 9,
+    "score_reason": "千葉:千葉,市川,千葉県 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  }
+]
