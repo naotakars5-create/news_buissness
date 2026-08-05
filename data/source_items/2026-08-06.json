@@ -1,0 +1,77 @@
+[
+  {
+    "id": "fc5e98e8d6c4cf5d",
+    "date": "2026-08-06",
+    "source_name": "PR TIMES",
+    "title": "柏木由紀プロデュースコスメブランド「upink」ミュートカラーのベージュチークと色ムラや赤みをカバーするイエロー下地が限定登場！",
+    "url": "https://prtimes.jp/main/html/rd/p/000000314.000084518.html",
+    "published_at": "2026-08-05",
+    "summary": "[株式会社Rainmakers] [画像1: https://prcdn.freetls.fastly.net/release_image/84518/314/84518-314-ab446887a7388bc4725e99db1e5b07ea-1655x1104.jpg?width=536&quality=85%2C75&format=jpeg&auto=webp&fit=bounds&...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 13,
+    "score_reason": "千葉:千葉,柏,千葉県 / 若手:限定 / 雑談:限定 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 2,
+      "freshness": 4,
+      "smalltalk": 2,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "0a08e5c2dfed59a5",
+    "date": "2026-08-06",
+    "source_name": "PR TIMES",
+    "title": "設計段階からの検討により、公共工事でアルミ導体ケーブルが採用- 千葉県企業局新庁舎での「らくらくアルミケーブル(R)」採用実例 -",
+    "url": "https://prtimes.jp/main/html/rd/p/000000005.000187063.html",
+    "published_at": "2026-08-05",
+    "summary": "[古河電工メタルケーブル株式会社] 設計段階からの検討により、公共工事でアルミ導体ケーブルが採用 - 千葉県企業局新庁舎での「らくらくアルミケーブル(R)」採用実例 - 販売: ＳＦＣＣ株式会社、製造:古河電工メタルケーブル株式会社製の「らく...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 13,
+    "score_reason": "千葉:千葉,千葉県 / 提案:企業,採用 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 4
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "2434d63c6f4ca2df",
+    "date": "2026-08-06",
+    "source_name": "PR TIMES",
+    "title": "日立社会情報サービス、キヤノンITソリューションズ株式会社の企業年金システム関連事業を譲り受け",
+    "url": "https://prtimes.jp/main/html/rd/p/000000250.000005268.html",
+    "published_at": "2026-08-05",
+    "summary": "[株式会社日立社会情報サービス] 株式会社日立社会情報サービス（代表取締役 取締役社長：市川 博丈／以下、日立社会情報サービス）は、このたび、キヤノンITソリューションズ株式会社（代表取締役社長：須山 寛／以下、キヤノンITS）の企業年金...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 11,
+    "score_reason": "千葉:千葉,市川,千葉県 / 提案:企業 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 2
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  }
+]
