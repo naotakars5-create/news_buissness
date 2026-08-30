@@ -1,0 +1,104 @@
+[
+  {
+    "id": "2377d5d9f2584234",
+    "date": "2026-08-31",
+    "source_name": "PR TIMES",
+    "title": "「バキューム車か、仮設水処理か」500㎥以上が検討の一つの目安。セイスイ工業、「セイスイラボ」第1回を公開",
+    "url": "https://prtimes.jp/main/html/rd/p/000000060.000058301.html",
+    "published_at": "2026-08-30",
+    "summary": "[セイスイ工業株式会社] セイスイ工業株式会社（本社：千葉県千葉市若葉区、代表取締役：井本 謙一、以下 セイスイ工業、https://seisui-kk.com）は、2026年8月31日より、実務型ウェビナーシリーズ「セイスイラボ」の第1回「仮設水処理の...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 11,
+    "score_reason": "千葉:千葉,千葉県 / ビジネス:本社 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 2,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "da1cff9e0d517c7e",
+    "date": "2026-08-31",
+    "source_name": "PR TIMES",
+    "title": "【株式会社富士テクニカルコーポレーション】SDGs達成を推進。七十七銀行のサステナブル関連ソリューション「77SevenGoals」を活用し運転資金を調達",
+    "url": "https://prtimes.jp/main/html/rd/p/000000044.000081547.html",
+    "published_at": "2026-08-30",
+    "summary": "[株式会社 富士テクニカルコーポレーション] 太陽光発電事業を展開する株式会社富士テクニカルコーポレーション(本社：千葉県匝瑳市、代表取締役：小川毅一郎、以下、「当社」)は、株式会社七十七銀行が提供するSDGs特化型のサステナブル関連 ソリューション...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 11,
+    "score_reason": "千葉:千葉,匝瑳,千葉県 / ビジネス:本社 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 2,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": true,
+    "exclude_reason": "行政調達・補助/公募/入札系のため除外: 調達",
+    "exclude_matched": [
+      "調達"
+    ],
+    "used_in_draft": false
+  },
+  {
+    "id": "2bad5952e8c8d7c9",
+    "date": "2026-08-31",
+    "source_name": "PR TIMES",
+    "title": "静岡で生まれた「命を守るカルタ」がルワンダへ――洪水・土砂災害と向き合う地域で防災授業を実施",
+    "url": "https://prtimes.jp/main/html/rd/p/000000139.000166170.html",
+    "published_at": "2026-08-30",
+    "summary": "[特定非営利活動法人なかよし学園プロジェクト] 特定非営利活動法人なかよし学園プロジェクト（千葉県松戸市、代表：中村雄一）は、2026年8月11日、ルワンダ共和国Miyove（ミヨベ）地区において、静岡県の高校生や市民が制作した「PEACE 防災カルタ」を活用し...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 11,
+    "score_reason": "千葉:千葉,松戸,千葉県 / 提案:法人 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 2
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "922d1189723d2bb5",
+    "date": "2026-08-31",
+    "source_name": "PR TIMES",
+    "title": "ディズニーキャラクターイメージウィッグ『ディズニー　ウィッグコレクション』（2026 バージョン／5種）8月31日（月）10時より自社ECサイト他にて先行予約販売を開始",
+    "url": "https://prtimes.jp/main/html/rd/p/000000591.000000702.html",
+    "published_at": "2026-08-30",
+    "summary": "[株式会社アートネイチャー] [画像1: https://prcdn.freetls.fastly.net/release_image/702/591/702-591-a5bc3713e0dc0a85679820d512cf01ec-1500x844.jpg?width=536&quality=85%2C75&format=jpeg&auto=webp&fit=bounds&b...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 9,
+    "score_reason": "千葉:千葉,ディズニー,千葉県 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  }
+]
