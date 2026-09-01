@@ -1,0 +1,181 @@
+[
+  {
+    "id": "837802a5ab27096d",
+    "date": "2026-09-02",
+    "source_name": "PR TIMES",
+    "title": "【千葉県 × eiicon】食品流通、地域ヘルスケア、バイオ、産業現場DX「CHIBA OPEN INNOVATION PROGRAM『PORT』」県内企業4社が全国から事業共創パートナー企業を募集",
+    "url": "https://prtimes.jp/main/html/rd/p/000000973.000037194.html",
+    "published_at": "2026-09-01",
+    "summary": "[株式会社eiicon] 日本最大級のオープンイノベーションプラットフォーム「AUBA（アウバ）」を運営する株式会社eiicon（エイコン 本社所在地：東京都港区、代表取締役社長：中村 亜由子、以下 eiicon）は、千葉県より受託・運営す...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 20,
+    "score_reason": "千葉:千葉,千葉県 / ビジネス:オープン,本社,DX / 雑談:オープン / 提案:企業,DX / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 5,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 2,
+      "proposal": 4
+    },
+    "excluded": false,
+    "exclude_reason": "ソフト除外語あり(募集)だが許可語(オープン)があるため残す",
+    "exclude_matched": [
+      "募集"
+    ],
+    "used_in_draft": false
+  },
+  {
+    "id": "d693a275f606b232",
+    "date": "2026-09-02",
+    "source_name": "PR TIMES",
+    "title": "【石井食品】イシイのおべんとクンミートボール×野原ひろしコラボキャンペーンに『QUOカードPay』採用",
+    "url": "https://prtimes.jp/main/html/rd/p/000000347.000032053.html",
+    "published_at": "2026-09-01",
+    "summary": "[株式会社クオカード] 株式会社クオカード（以下当社、本社:東京都中央区、代表取締役社長:近田 剛）が展開するスマートフォンで使えるデジタルギフト「QUOカードPay（クオ・カード ペイ）」は、石井食品株式会社（本社：千葉県船橋市...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 15,
+    "score_reason": "千葉:千葉,船橋,千葉県 / ビジネス:本社 / 若手:コラボ / 提案:採用 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 2,
+      "young_appeal": 2,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 2
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "de8fb4ed6b39bb3e",
+    "date": "2026-09-02",
+    "source_name": "PR TIMES",
+    "title": "「日経クロステックが選ぶCIO/CDOオブ・ザ・イヤー2026」大賞は日清食品ホールディングスの成田氏、「同CTOオブ・ザ・イヤー2026」大賞は日揮ホールディングス水口氏に決定",
+    "url": "https://prtimes.jp/main/html/rd/p/000000335.000041279.html",
+    "published_at": "2026-09-01",
+    "summary": "[株式会社 日経BP] 日経BP（本社：東京都港区、社長CEO：井口哲也）のテクノロジー専門メディア「日経クロステック」は、「日経クロステックが選ぶCIO/CDOオブ・ザ・イヤー2026」、「日経クロステックが選ぶCTOオブ・ザ・イヤー20...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 11,
+    "score_reason": "千葉:千葉,成田,千葉県 / ビジネス:本社 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 2,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "41956380740a9e06",
+    "date": "2026-09-02",
+    "source_name": "PR TIMES",
+    "title": "2026年 オリコン顧客満足度(R)調査 へーベルメゾンが賃貸マンションにおいて2年連続【第1位】獲得",
+    "url": "https://prtimes.jp/main/html/rd/p/000000273.000073738.html",
+    "published_at": "2026-09-01",
+    "summary": "[旭化成ホームズ株式会社] 旭化成ホームズ株式会社（本社：東京都千代田区、代表取締役社長：大和久 裕二）および旭化成不動産レジデンス株式会社（本社：東京都千代田区、代表取締役社長：市川 靖道）は、オリコン株式会社（本社：東京都...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 11,
+    "score_reason": "千葉:千葉,市川,旭,千葉県 / ビジネス:本社 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 2,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "b6c16a8261c87d15",
+    "date": "2026-09-02",
+    "source_name": "PR TIMES",
+    "title": "Tsubame Lab、分析・科学機器の総合展示会「JASIS 2026」に出展 ─ プラスミド構築ワークフローの自動化システムと分注特化の卓上パッケージを実機展示",
+    "url": "https://prtimes.jp/main/html/rd/p/000000008.000180662.html",
+    "published_at": "2026-09-01",
+    "summary": "[Ｔｓｕｂａｍｅ Ｌａｂ株式会社] Tsubame Lab 株式会社（本社：東京都文京区湯島、代表取締役 CEO：楢崎 鴻司朗、以下「Tsubame Lab」）は、2026年9月2日（水）から4日（金）まで幕張メッセで開催される分析・科学機器の総合展示会「JASIS 2026」...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 11,
+    "score_reason": "千葉:千葉,幕張,千葉県,幕張メッセ / ビジネス:本社 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 2,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "04af57b2a5217c71",
+    "date": "2026-09-02",
+    "source_name": "PR TIMES",
+    "title": "思わず触ってみたくなる、ふわふわの触り心地の布製ぽち袋『ミッフィーふわもこぽち袋』を10月13日（火）に新発売　もらった後も小物入れやバッグチャームとして楽しめる",
+    "url": "https://prtimes.jp/main/html/rd/p/000000133.000051757.html",
+    "published_at": "2026-09-01",
+    "summary": "[株式会社マルアイ] 「こころ くらし 包む」をモットーに、さまざまな製品を通じて毎日のくらしに彩りと楽しさを提供する紙製品・化成品メーカーの株式会社マルアイ（本社：山梨県市川三郷町、代表取締役社長：村松道哉、以下「...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 11,
+    "score_reason": "千葉:千葉,市川,千葉県 / ビジネス:本社 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 2,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "5d5bf1f4634a9fda",
+    "date": "2026-09-02",
+    "source_name": "PR TIMES",
+    "title": "成田空港の新たな魅力を動画で発信「思わず成田空港に行きたくなる動画」をテーマに作品募集を開始！",
+    "url": "https://prtimes.jp/main/html/rd/p/000001067.000004762.html",
+    "published_at": "2026-09-01",
+    "summary": "[成田国際空港株式会社] 成田国際空港株式会社（NAA）は、株式会社宣伝会議が主催するオンライン動画コンテスト「第14回 Brain Online Video Award（BOVA）」に協賛し、「思わず成田空港に行きたくなる動画」をテーマとした1分以内の縦...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 9,
+    "score_reason": "千葉:千葉,成田,成田空港,千葉県 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": true,
+    "exclude_reason": "委託・契約系のため除外: 募集",
+    "exclude_matched": [
+      "募集"
+    ],
+    "used_in_draft": false
+  }
+]
