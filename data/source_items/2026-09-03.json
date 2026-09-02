@@ -1,0 +1,130 @@
+[
+  {
+    "id": "5bc4eba5206d2989",
+    "date": "2026-09-03",
+    "source_name": "PR TIMES",
+    "title": "100年企業へ・日田焼きそば発祥の店「想夫恋」、首都圏でのFC加盟オーナー募集を強化。東京・神奈川・千葉・埼玉を重点エリアに",
+    "url": "https://prtimes.jp/main/html/rd/p/000000008.000182770.html",
+    "published_at": "2026-09-02",
+    "summary": "[株式会社想夫恋] 関東はまだ3店舗。「短期的な利益」より「地域に根付き、30年・40年続ける」意欲ある方を募集。飲食未経験でも加盟契約から最短4～5か月での開業も 株式会社想夫恋（本社：大分県日田市・代表取締役：和田りえ）...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 15,
+    "score_reason": "千葉:千葉,千葉県 / ビジネス:開業,本社 / 提案:企業 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 4,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 2
+    },
+    "excluded": false,
+    "exclude_reason": "ソフト除外語あり(契約 / 募集)だが許可語(開業)があるため残す",
+    "exclude_matched": [
+      "契約",
+      "募集"
+    ],
+    "used_in_draft": false
+  },
+  {
+    "id": "8fc8519dd7953f4e",
+    "date": "2026-09-03",
+    "source_name": "PR TIMES",
+    "title": "「スマート工場EXPO 秋」に出展　AIエッジ端末のほか、3D安全LiDARを展示",
+    "url": "https://prtimes.jp/main/html/rd/p/000000096.000013146.html",
+    "published_at": "2026-09-02",
+    "summary": "[株式会社ネクスティ エレクトロニクス] 株式会社ネクスティ エレクトロニクス（本店：東京都港区、代表取締役社長：山田 強、以下、当社）は、2026年9月9日（水）～11日（金）に幕張メッセで開催される「第5回 スマート工場EXPO 秋」に出展し、工場・物...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 11,
+    "score_reason": "千葉:千葉,幕張,千葉県,幕張メッセ / ビジネス:工場 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 2,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "a05adb67719aa57e",
+    "date": "2026-09-03",
+    "source_name": "PR TIMES",
+    "title": "アイボリー×ブルーカラーが大人かわいいミッキーマウス、ミニーマウスモチーフの新作ディズニーアイテムを9月4日（金）発売",
+    "url": "https://prtimes.jp/main/html/rd/p/000000510.000021410.html",
+    "published_at": "2026-09-02",
+    "summary": "[Francfranc] ライフスタイルを提案するインテリアブランド『Francfranc（フランフラン）』は、トレンドのアイボリー×ブルーカラーでまとめた大人かわいい新作のディズニーアイテムを、2026年9月4日（金）より全国のFrancfranc...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 11,
+    "score_reason": "千葉:千葉,ディズニー,千葉県 / 若手:トレンド / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 2,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "9a32bbb83b76ad58",
+    "date": "2026-09-03",
+    "source_name": "PR TIMES",
+    "title": "エー・スター・クォンタム、「Forbes Asia 100 To Watch 2026」に選出",
+    "url": "https://prtimes.jp/main/html/rd/p/000000017.000038461.html",
+    "published_at": "2026-09-02",
+    "summary": "[A*QUANTUM] 日本語 ｜ English ｜ 简体中文 English and Simplified Chinese versions are available below. 株式会社エー・スター・クォンタム（代表取締役社長兼CEO：船橋弘路）は、アジア太平洋地域で成長が期待されるス...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 9,
+    "score_reason": "千葉:千葉,船橋,千葉県 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "72ac666c36da2f50",
+    "date": "2026-09-03",
+    "source_name": "PR TIMES",
+    "title": "わくわくはっぴー本棚との地域連携共創・相互支援に関する包括連携協定締結のお知らせ",
+    "url": "https://prtimes.jp/main/html/rd/p/000000190.000118173.html",
+    "published_at": "2026-09-02",
+    "summary": "[浦安D-Rocks] いつも浦安D-Rocksへあたたかいご声援をいただき誠にありがとうございます。 この度、浦安D-Rocksは、労働者協同組合ワーカーズコープ・センター事業団 浦安地域福祉事業所（所長：橘高 由美)が運営するわくわ...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 9,
+    "score_reason": "千葉:千葉,浦安,千葉県 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  }
+]
