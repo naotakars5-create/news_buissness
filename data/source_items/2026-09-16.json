@@ -1,0 +1,52 @@
+[
+  {
+    "id": "2a971d276c49a79d",
+    "date": "2026-09-16",
+    "source_name": "PR TIMES",
+    "title": "「ゲームは教育だ。」― 品川学藝高等学校×慶應義塾大学SFC、東京ゲームショウ2026に出展",
+    "url": "https://prtimes.jp/main/html/rd/p/000000020.000065607.html",
+    "published_at": "2026-09-15",
+    "summary": "[学校法人三浦学園] 学校法人三浦学園 品川学藝高等学校（東京都品川区、理事長：三浦裕明、校長：若林彰）は、慶應義塾大学 湘南藤沢キャンパス（SFC）と共同で、2026年9月17日（木）から21日（月・祝）まで幕張メッセで開催される...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 11,
+    "score_reason": "千葉:千葉,幕張,千葉県,幕張メッセ / 提案:法人 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 2
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "62417a73f1172756",
+    "date": "2026-09-16",
+    "source_name": "PR TIMES",
+    "title": "あきやフリースクール「たね」千葉・八街に今秋開校　9/10（木）～10/31（土）にクラウドファンディングに挑戦",
+    "url": "https://prtimes.jp/main/html/rd/p/000000018.000166247.html",
+    "published_at": "2026-09-10",
+    "summary": "[オハナホーム株式会社] [画像1: https://prcdn.freetls.fastly.net/release_image/166247/18/166247-18-a04f26692496b1507ee796e2518169df-1536x1024.jpg?width=536&quality=85%2C75&format=jpeg&auto=webp&fit=bounds&...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 7,
+    "score_reason": "千葉:千葉,八街,千葉県 / 新しさ:2/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 0,
+      "freshness": 2,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  }
+]
