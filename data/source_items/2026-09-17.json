@@ -1,0 +1,52 @@
+[
+  {
+    "id": "df2136f866d61551",
+    "date": "2026-09-17",
+    "source_name": "PR TIMES",
+    "title": "【大規模改修】特別養護老人ホーム「みどりの苑」が9月16日、東京都の代替施設へ一時移転",
+    "url": "https://prtimes.jp/main/html/rd/p/000000092.000156929.html",
+    "published_at": "2026-09-16",
+    "summary": "[社会福祉法人奉優会] 社会福祉法人奉優会（本部：東京都世田谷区／理事長：香取 寛）が運営する特別養護老人ホーム「みどりの苑」（東京都板橋区）は、大規模改修工事に伴い、2026年9月16日（水）、東京都が板橋区栄町に整備した「社...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 15,
+    "score_reason": "千葉:千葉,香取,千葉県 / ビジネス:移転 / 提案:法人,移転 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 2,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 4
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "cbbc3930a7700203",
+    "date": "2026-09-17",
+    "source_name": "PR TIMES",
+    "title": "リスクマネジメントに対する“自分ごと化”を支援するeラーニング『コンプライアンスイマジン』『情報セキュリティイマジン』英語版を提供開始",
+    "url": "https://prtimes.jp/main/html/rd/p/000000019.000127485.html",
+    "published_at": "2026-09-16",
+    "summary": "[株式会社NTT HumanEX] 株式会社NTT HumanEX（エヌ・ティ・ティ ヒューマネクス 本社：東京都港区、代表取締役社長：市川 泰吾、以下「当社」）は、アニメーションとケーススタディを通じてコンプライアンスおよび情報セキュリティリス...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 11,
+    "score_reason": "千葉:千葉,市川,千葉県 / ビジネス:本社 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 2,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  }
+]
