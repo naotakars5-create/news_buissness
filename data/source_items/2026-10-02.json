@@ -1,0 +1,102 @@
+[
+  {
+    "id": "0804c1676fc08639",
+    "date": "2026-10-02",
+    "source_name": "PR TIMES",
+    "title": "オープンハウス ・ディベロップメント 立川事務所・津田沼事務所 開設のお知らせ",
+    "url": "https://prtimes.jp/main/html/rd/p/000001045.000024241.html",
+    "published_at": "2026-10-02",
+    "summary": "[株式会社オープンハウスグループ] 株式会社オープンハウスグループ（本社 東京都千代田区、代表取締役社長 福岡 良介、以下「当社」）のグループ会社である株式会社オープンハウス・ディベロップメントは、2026年10月1日（木）に新築戸建の施工管...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 16,
+    "score_reason": "千葉:千葉,津田沼,千葉県 / ビジネス:オープン,本社 / 雑談:オープン / 新しさ:5/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 4,
+      "young_appeal": 0,
+      "freshness": 5,
+      "smalltalk": 2,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "227c68b1e67325be",
+    "date": "2026-10-02",
+    "source_name": "PR TIMES",
+    "title": "プレス発表 IPA、「PROTOCOL ENGINE」をテーマにCEATEC 2026出展",
+    "url": "https://prtimes.jp/main/html/rd/p/000000037.000178657.html",
+    "published_at": "2026-10-02",
+    "summary": "[独立行政法人情報処理推進機構] 独立行政法人情報処理推進機構（IPA、理事長：齊藤 裕）は、2026年10月13日（火曜日）～16日（金曜日）まで幕張メッセで開催される「CEATEC 2026」にて、未来のデジタル社会を構想し、形づくる「PROTOCOL ENGINE...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 12,
+    "score_reason": "千葉:千葉,幕張,千葉県,幕張メッセ / 提案:法人 / 新しさ:5/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 0,
+      "freshness": 5,
+      "smalltalk": 0,
+      "proposal": 2
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "44cb78ae4c50741f",
+    "date": "2026-10-02",
+    "source_name": "PR TIMES",
+    "title": "「広告付年賀はがき（エコー年賀はがき）【京成電鉄】」を発売します！",
+    "url": "https://prtimes.jp/main/html/rd/p/000000092.000164008.html",
+    "published_at": "2026-10-02",
+    "summary": "[京成電鉄株式会社] 京成電鉄（本社：千葉県市川市、社長：天野 貴夫）では、２０２６年１１月２日（月）から「広告付年賀はがき（エコー年賀はがき）【京成電鉄】」を発売します。 この年賀はがきは、日本郵便株式会社が発行・...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 12,
+    "score_reason": "千葉:千葉,市川,千葉県 / ビジネス:本社 / 新しさ:5/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 2,
+      "young_appeal": 0,
+      "freshness": 5,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "439c8c96365c0b9b",
+    "date": "2026-10-02",
+    "source_name": "PR TIMES",
+    "title": "2026年8月 空港運用状況",
+    "url": "https://prtimes.jp/main/html/rd/p/000001080.000004762.html",
+    "published_at": "2026-10-02",
+    "summary": "[成田国際空港株式会社] [画像1: https://prcdn.freetls.fastly.net/release_image/4762/1080/4762-1080-817154fa5c5eca8e5ca97235b6897b29-575x284.png?width=536&quality=85%2C75&format=jpeg&auto=webp&fit=bounds&am...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 10,
+    "score_reason": "千葉:千葉,成田,千葉県 / 新しさ:5/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 0,
+      "freshness": 5,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  }
+]
