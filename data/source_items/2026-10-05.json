@@ -1,0 +1,104 @@
+[
+  {
+    "id": "4267d0b94ed05e8f",
+    "date": "2026-10-05",
+    "source_name": "PR TIMES",
+    "title": "IPプラットフォーム「Skettt」が『第16回デジタルマーケティングEXPO【秋】』に出展",
+    "url": "https://prtimes.jp/main/html/rd/p/000000224.000082736.html",
+    "published_at": "2026-10-04",
+    "summary": "[株式会社Wunderbar] IPプラットフォーム「Skettt（スケット）」を運営する株式会社Wunderbar（本社：東京都渋谷区、代表取締役CEO：長尾慶人）は、2026年10月21日（水）から10月23日（金）まで幕張メッセにて開催される、「第16回デ...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 11,
+    "score_reason": "千葉:千葉,幕張,千葉県,幕張メッセ / ビジネス:本社 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 2,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "6727900ef36f4590",
+    "date": "2026-10-05",
+    "source_name": "PR TIMES",
+    "title": "ジャパンディスプレイ茂原工場取得に関するお知らせ",
+    "url": "https://prtimes.jp/main/html/rd/p/000000011.000165941.html",
+    "published_at": "2026-10-01",
+    "summary": "[新光電気工業株式会社] 2026年9月30日 新光電気工業株式会社 当社は、本日、株式会社ジャパンディスプレイ（以下「JDI」といいます。）との間で、JDI茂原工場（以下「本工場」といいます。）の売買契約を締結いたしましたので、下記の...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 9,
+    "score_reason": "千葉:千葉,茂原,千葉県 / ビジネス:工場 / 新しさ:2/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 2,
+      "young_appeal": 0,
+      "freshness": 2,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": true,
+    "exclude_reason": "委託・契約系のため除外: 契約",
+    "exclude_matched": [
+      "契約"
+    ],
+    "used_in_draft": false
+  },
+  {
+    "id": "fc9e88ca40647114",
+    "date": "2026-10-05",
+    "source_name": "PR TIMES",
+    "title": "四街道市職員カスタマーハラスメントに対する基本方針を策定しました",
+    "url": "https://prtimes.jp/main/html/rd/p/000000679.000017159.html",
+    "published_at": "2026-10-04",
+    "summary": "[四街道市役所] 本市では、これまでも市民をはじめとする行政サービスの利用者等からの意見や要望等には、丁寧かつ真摯に対応することを心掛けながら業務にあたっています。一方で、これらの意見や要望等の中には、職員の人格を...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 9,
+    "score_reason": "千葉:千葉,四街道,千葉県 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "265488b10efa29a4",
+    "date": "2026-10-05",
+    "source_name": "PR TIMES",
+    "title": "21世紀の森と広場など常盤平駅周辺の公園の魅力を創出！千葉県松戸市でサウンディング調査を実施",
+    "url": "https://prtimes.jp/main/html/rd/p/000000627.000015010.html",
+    "published_at": "2026-10-04",
+    "summary": "[松戸市] [画像1: https://prcdn.freetls.fastly.net/release_image/15010/627/15010-627-35663aac32fd00d6bce52bc752d61214-2121x1413.jpg?width=536&quality=85%2C75&format=jpeg&auto=webp&fit=bounds&...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 9,
+    "score_reason": "千葉:千葉,松戸,千葉県 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  }
+]
