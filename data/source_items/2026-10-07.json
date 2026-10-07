@@ -1,0 +1,52 @@
+[
+  {
+    "id": "0f2a3dbed1b39589",
+    "date": "2026-10-07",
+    "source_name": "PR TIMES",
+    "title": "人気イラストレーターrurudo氏が手掛けるオリジナルキャラクター「るるどらいおん」のフィギュアが、爽やかなマリンセーラー姿で登場。あみあみ限定でご案内中。",
+    "url": "https://prtimes.jp/main/html/rd/p/000003863.000025615.html",
+    "published_at": "2026-10-07",
+    "summary": "[大網株式会社] [画像1: https://prcdn.freetls.fastly.net/release_image/25615/3863/25615-3863-90149b5be7307f0f7c47359b6d9137fb-800x533.jpg?width=536&quality=85%2C75&format=jpeg&auto=webp&fit=bounds&...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 18,
+    "score_reason": "千葉:千葉,大網,千葉県 / 若手:人気,限定 / 雑談:人気,限定 / 新しさ:5/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 4,
+      "freshness": 5,
+      "smalltalk": 4,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "48f5354da643ab56",
+    "date": "2026-10-07",
+    "source_name": "PR TIMES",
+    "title": "配車アプリ「DiDi」、旭川空港の「配車アプリのりば」でサービス提供を開始",
+    "url": "https://prtimes.jp/main/html/rd/p/000000132.000051938.html",
+    "published_at": "2026-10-06",
+    "summary": "[DiDiモビリティジャパン株式会社] DiDiモビリティジャパン株式会社（本社：東京都港区、代表取締役社長：和久山 大輔、以下「当社」）が提供するタクシーアプリ「DiDi」は、2026年10月1日（木）より、北海道エアポート株式会社が運営する旭川空...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 11,
+    "score_reason": "千葉:千葉,旭,千葉県 / ビジネス:本社 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 2,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  }
+]
