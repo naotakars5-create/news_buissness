@@ -1,0 +1,104 @@
+[
+  {
+    "id": "904da272b597581b",
+    "date": "2026-10-20",
+    "source_name": "PR TIMES",
+    "title": "たすけてACCESS、前任者不在・仕様書なしのブラックボックスを解消するAccessサービス事例データベースを公開",
+    "url": "https://prtimes.jp/main/html/rd/p/000000006.000156074.html",
+    "published_at": "2026-10-19",
+    "summary": "[合同会社BlueAge] 合同会社BlueAge（本社：千葉県船橋市、CEO：安田 久美子、以下「BlueAge」）は、運営するAccess情報メディア「たすけてACCESS」において、オンラインサポートを含む累計400件以上の支援実績をもとにしたAccess...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 11,
+    "score_reason": "千葉:千葉,船橋,千葉県 / ビジネス:本社 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 2,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": true,
+    "exclude_reason": "行政調達・補助/公募/入札系のため除外: 仕様書",
+    "exclude_matched": [
+      "仕様書"
+    ],
+    "used_in_draft": false
+  },
+  {
+    "id": "039c267536de5296",
+    "date": "2026-10-20",
+    "source_name": "PR TIMES",
+    "title": "千葉の海をキレイにしよう！9月25日（金）から11月8日（日）まで「千葉海ごみゼロキャンペーン」開催中！",
+    "url": "https://prtimes.jp/main/html/rd/p/000000353.000053539.html",
+    "published_at": "2026-10-19",
+    "summary": "[オニオン新聞社] [画像1: https://prcdn.freetls.fastly.net/release_image/53539/353/53539-353-2a81f27ec5269be2247cf2b87ca02b66-909x679.png?width=536&quality=85%2C75&format=jpeg&auto=webp&fit=bounds&am...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 9,
+    "score_reason": "千葉:千葉,千葉県 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "328942ab487c8d37",
+    "date": "2026-10-20",
+    "source_name": "PR TIMES",
+    "title": "HBCラジオ 旭川FM補完中継局　開局日のお知らせ",
+    "url": "https://prtimes.jp/main/html/rd/p/000000145.000082555.html",
+    "published_at": "2026-10-19",
+    "summary": "[HBC北海道放送] [画像: https://prcdn.freetls.fastly.net/release_image/82555/145/82555-145-a0d9ad04d5c3edca378b7b1d7f064765-477x93.png?width=536&quality=85%2C75&format=jpeg&auto=webp&fit=bounds&...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 9,
+    "score_reason": "千葉:千葉,旭,千葉県 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "c53c6eb6de66d214",
+    "date": "2026-10-20",
+    "source_name": "PR TIMES",
+    "title": "京美人を決める日本最大級のコンテスト「京美人Award Season5」開催決定！≒JOY 市原愛弓 が前回に続き公式アンバサダーに！",
+    "url": "https://prtimes.jp/main/html/rd/p/000000096.000065673.html",
+    "published_at": "2026-10-19",
+    "summary": "[株式会社Themiss] 株式会社Themiss（東京都港区、代表取締役：板谷 瞭太郎）は、 全国の女性を対象としたミスコンテスト 「京美人Award Season5」を開催いたします。 「京美人Award」は、全国から選抜された女性による「京美人...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 9,
+    "score_reason": "千葉:千葉,市原,千葉県 / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  }
+]
