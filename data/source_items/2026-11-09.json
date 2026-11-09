@@ -1,0 +1,52 @@
+[
+  {
+    "id": "5425efdcd560e0c5",
+    "date": "2026-11-09",
+    "source_name": "PR TIMES",
+    "title": "「導入しても回らない」保全DXを動かす―設備管理BPaaS「MENTENAワークス」提供開始",
+    "url": "https://prtimes.jp/main/html/rd/p/000000085.000161767.html",
+    "published_at": "2026-11-08",
+    "summary": "[八千代ソリューションズ株式会社] [画像1: https://prcdn.freetls.fastly.net/release_image/161767/85/161767-85-1657abd1d34992b912ece63258ae7b87-1612x520.jpg?width=536&quality=85%2C75&format=jpeg&auto=webp&fit=bounds&a...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 13,
+    "score_reason": "千葉:千葉,八千代,千葉県 / ビジネス:DX / 提案:DX / 新しさ:4/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 2,
+      "young_appeal": 0,
+      "freshness": 4,
+      "smalltalk": 0,
+      "proposal": 2
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  },
+  {
+    "id": "4c6e4c22e9d7884c",
+    "date": "2026-11-09",
+    "source_name": "PR TIMES",
+    "title": "【オーセントホテル小樽】バーテンダー 野田 浩史 令和8年秋の褒章にて「黄綬褒章」を受章。",
+    "url": "https://prtimes.jp/main/html/rd/p/000001001.000076572.html",
+    "published_at": "2026-11-04",
+    "summary": "[ＳＨＫライングループ] オーセントホテル小樽（北海道小樽市稲穂2丁目15番1号）メインバー「キャプテンズバー」のマスターバーテンダーである 野田 浩史（のだ ひろし）は令和8年度 秋の褒章『黄綬褒章』を受章いたしました。 【秋の褒...",
+    "area": "千葉県",
+    "category": "release",
+    "score": 7,
+    "score_reason": "千葉:千葉,野田,千葉県 / 新しさ:2/5",
+    "score_breakdown": {
+      "chiba_relevance": 5,
+      "sales_useful": 0,
+      "young_appeal": 0,
+      "freshness": 2,
+      "smalltalk": 0,
+      "proposal": 0
+    },
+    "excluded": false,
+    "exclude_reason": "",
+    "exclude_matched": [],
+    "used_in_draft": false
+  }
+]
